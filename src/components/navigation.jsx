@@ -16,9 +16,14 @@ export function Navigation({ className }) {
 
   return (
     <nav className={[navStyle, className].join(" ")}>
-      <a href="/" className={navLink} activeClassName={activeLink}>
+      <Link
+        key="All"
+        className={navLink}
+        to="/"
+        activeClassName={activeLink}
+      >
         Inicio
-      </a>
+      </Link>
       <Link
         key="All"
         className={navLink}

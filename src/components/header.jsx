@@ -13,7 +13,6 @@ import {
   searchButton,
   nav,
 } from "./header.module.css"
-import logo from "../images/logo-header.svg";
 import logoDesktop from "../images/logo.png";
 
 export function Header() {

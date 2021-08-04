@@ -6,6 +6,7 @@
   text-align: center;
   color: var(--text-color-secondary);
   margin-top: var(--space-3xl);
+  background: #000;
 }
 
 .logos {
@@ -26,7 +27,6 @@
 
 .footerNavList {
   display: flex;
-  flex-direction: column;
   font-size: var(--text-md);
 }
 

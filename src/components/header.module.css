@@ -9,7 +9,7 @@
 .header {
   display: grid;
   width: 100%;
-  padding: var(--size-gap) var(--size-gutter);
+  padding: 0rem 1rem;
   grid-template-columns: var(--size-input) 1fr min-content min-content;
   grid-template-areas: "logo nada searchButton cartButton" "navHeader navHeader navHeader navHeader";
   align-items: center;

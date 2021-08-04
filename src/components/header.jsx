@@ -13,9 +13,12 @@ import {
   searchButton,
   nav,
 } from "./header.module.css"
+import logo from "../images/logo-header.svg";
+import logoDesktop from "../images/logo.png";
 
 export function Header() {
-  const { checkout, loading, didJustAddToCart } = React.useContext(StoreContext)
+  const { checkout, loading, didJustAddToCart } = React.useContext(StoreContext);
+  const [showMenu, setShowMenu] = React.useState(false);
 
   const items = checkout ? checkout.lineItems : []
 
@@ -26,10 +29,10 @@ export function Header() {
   return (
     <div className={container}>
       <header className={header}>
-        <Link to="/" className={logoCss}>
-          <Logo />
-        </Link>
         <Navigation className={nav} />
+        <Link to="/" className={logoCss}>
+          <img alt="Sativa" width="90" src={logoDesktop} />
+        </Link>
         <Link to="/search" className={searchButton}>
           <SearchIcon />
         </Link>

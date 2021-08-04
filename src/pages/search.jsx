@@ -157,7 +157,7 @@ function SearchPage({
 
   return (
     <Layout>
-      <h1 className={visuallyHidden}>Search Results</h1>
+      <h1 className={visuallyHidden}>Resultados de búsqueda</h1>
       <div className={main}>
         <div className={search} aria-hidden={modalOpen}>
           <SearchBar defaultTerm={filters.term} setFilters={setFilters} />
@@ -175,17 +175,17 @@ function SearchPage({
           </button>
           <div className={sortSelector}>
             <label>
-              <span>Sort by:</span>
+              <span>Ordenar por:</span>
               <select
                 value={sortKey}
                 // eslint-disable-next-line
                 onChange={(e) => setSortKey(e.target.value)}
               >
-                <option value="RELEVANCE">Relevance</option>
-                <option value="PRICE">Price</option>
-                <option value="TITLE">Title</option>
-                <option value="CREATED_AT">New items</option>
+                <option value="RELEVANCE">Relevancia</option>
+                <option value="CREATED_AT">Nuevos items</option>
                 <option value="BEST_SELLING">Trending</option>
+                <option value="PRICE">Precio</option>
+                <option value="TITLE">Titulo</option>
               </select>
             </label>
             <SortIcon className={sortIcon} />
@@ -221,7 +221,7 @@ function SearchPage({
             </p>
           ) : (
             <p className={resultsStyle}>
-              Search results{" "}
+              Resultados de búsqueda{" "}
               {filters.term && (
                 <>
                   for "<span>{filters.term}</span>"
@@ -238,7 +238,7 @@ function SearchPage({
                     product={{
                       title: node.title,
                       priceRangeV2: node.priceRangeV2,
-                      slug: `/products/${slugify(node.productType)}/${
+                      slug: `/tienda/${slugify(node.productType)}/${
                         node.handle
                       }`,
                       // The search API and Gatsby data layer have slightly different images available.
@@ -283,7 +283,7 @@ function SearchBar({ defaultTerm, setFilters }) {
           setTerm(e.target.value)
           debouncedSetFilters(e.target.value)
         }}
-        placeholder="Search..."
+        placeholder="Busca aquí..."
       />
       {term ? (
         <button

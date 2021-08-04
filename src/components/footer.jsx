@@ -2,7 +2,6 @@ import { Link } from "gatsby"
 import * as React from "react"
 import Logo from "../icons/logo"
 import {
-  footerStyle,
   copyright,
   links,
   blurb,
@@ -13,7 +12,7 @@ import {
 
 export function Footer() {
   return (
-    <footer className={footerStyle}>
+    <footer className="section section-gradient">
       <div className={blurb}>
         <div className={logos}>
           <Logo />
@@ -29,7 +28,7 @@ export function Footer() {
           <li>
             <Link
               key="All"
-              to="/products/"
+              to="/tienda/"
             >
               Tienda
             </Link>
@@ -49,7 +48,7 @@ export function Footer() {
         </ul>
       </nav>
       <div className={copyright}>
-        Copyright &copy; {new Date().getFullYear()} · All rights reserved
+        Copyright &copy; {new Date().getFullYear()} · Todos los derechos reservados
       </div>
     </footer>
   )

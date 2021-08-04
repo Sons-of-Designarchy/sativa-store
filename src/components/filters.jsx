@@ -32,7 +32,7 @@ export function Filters({
   return (
     <>
       <CheckFilter
-        name="Type"
+        name="Tipo"
         items={productTypes}
         selectedItems={filters.productTypes}
         setSelectedItems={(value) => updateFilter("productTypes", value)}
@@ -41,7 +41,7 @@ export function Filters({
       <details className={priceFilterStyle} open={true}>
         <summary>
           <div className={summary}>
-            Price
+            Precio
             {(filters.maxPrice || filters.minPrice) && (
               <button
                 className={clearButton}
@@ -53,7 +53,7 @@ export function Filters({
                   }))
                 }
               >
-                Reset
+                Resetear
               </button>
             )}
           </div>
@@ -61,7 +61,7 @@ export function Filters({
         <div className={priceFields}>
           <CurrencyField
             {...currencyCode}
-            aria-label="Minimum price"
+            aria-label="Precio mínimo"
             value={filters.minPrice}
             onChange={(event) =>
               updateNumeric("minPrice", event.currentTarget.value)
@@ -70,7 +70,7 @@ export function Filters({
           –{" "}
           <CurrencyField
             {...currencyCode}
-            aria-label="Maximum price"
+            aria-label="Precio máximo"
             value={filters.maxPrice}
             onChange={(event) =>
               updateNumeric("maxPrice", event.currentTarget.value)
@@ -80,7 +80,7 @@ export function Filters({
       </details>
       <hr />
       <CheckFilter
-        name="Brands"
+        name="Marcas"
         items={vendors}
         selectedItems={filters.vendors}
         setSelectedItems={(value) => updateFilter("vendors", value)}
@@ -88,7 +88,7 @@ export function Filters({
       <hr />
       <CheckFilter
         open={true}
-        name="Tags"
+        name="Etiquetas"
         items={tags}
         selectedItems={filters.tags}
         setSelectedItems={(value) => updateFilter("tags", value)}

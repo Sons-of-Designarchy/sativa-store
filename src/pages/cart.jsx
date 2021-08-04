@@ -40,12 +40,12 @@ export default function CartPage() {
               sometimes it’s hard to chose — maybe this helps:
             </p>
             <Link to="/search?s=BEST_SELLING" className={emptyStateLink}>
-              View trending products
+              Ver best sellers
             </Link>
           </div>
         ) : (
           <>
-            <h1 className={title}>Your cart</h1>
+            <h1 className={title}>Tu carrito</h1>
             <table className={table}>
               <thead>
                 <tr>

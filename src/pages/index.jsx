@@ -21,13 +21,13 @@ export const query = graphql`
 `
 function Hero (props) {
   return (
-    <>
+    <div className="text-center">
       <h1 className="display mb-4 text-light text-shadow">Cannabis Self-care para la mente, cuerpo y espíritu</h1>
       <p className="font-lg text-dark">
         Somos una comunidad inclusiva sobre el uso responsable, recreativo y creativo del Cannabis.
       </p>
       {/* <img src={Redes} className="img-fluid mx-auto" width="500" /> */}
-    </>
+    </div>
   )
 }
 

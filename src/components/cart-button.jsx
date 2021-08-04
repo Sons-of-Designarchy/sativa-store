@@ -6,7 +6,7 @@ import { cartButton, badge } from "./cart-button.module.css"
 export function CartButton({ quantity }) {
   return (
     <Link
-      aria-label={`Shopping Cart with ${quantity} items`}
+      aria-label={`Carrito de compra con ${quantity} elementos`}
       to="/cart"
       className={cartButton}
     >

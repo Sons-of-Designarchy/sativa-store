@@ -196,11 +196,11 @@ export default function Product({ data: { product, suggestions } }) {
               />
             </div>
             <div className={metaSection}>
-              <span className={labelFont}>Type</span>
+              <span className={labelFont}>Tipo</span>
               <span className={tagList}>
                 <Link to={product.productTypeSlug}>{product.productType}</Link>
               </span>
-              <span className={labelFont}>Tags</span>
+              <span className={labelFont}>Etiquetas</span>
               <span className={tagList}>
                 {product.tags.map((tag) => (
                   <Link to={`/search?t=${tag}`}>{tag}</Link>
@@ -221,7 +221,7 @@ export const query = graphql`
       description
       productType
       productTypeSlug: gatsbyPath(
-        filePath: "/products/{ShopifyProduct.productType}"
+        filePath: "/tienda/{ShopifyProduct.productType}"
       )
       tags
       priceRangeV2 {

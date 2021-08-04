@@ -43,7 +43,7 @@ export function Header() {
           "Updating…"
         ) : (
           <>
-            Added to cart{" "}
+            Agregado al carrito{" "}
             <svg
               width="14"
               height="14"

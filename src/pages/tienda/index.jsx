@@ -6,14 +6,14 @@ import { Seo } from "../../components/seo"
 import { MoreButton } from "../../components/more-button"
 import { title } from "./index.module.css"
 
-export default function Products({ data: { products } }) {
+export default function Tienda({ data: { products } }) {
   return (
     <Layout>
       <Seo title="All Products" />
-      <h1 className={title}>Products</h1>
+      <h1 className={title}>High Gang</h1>
       <ProductListing products={products.nodes} />
       {products.pageInfo.hasNextPage && (
-        <MoreButton to={`/search#more`}>More products</MoreButton>
+        <MoreButton to={`/search#more`}>Más Productos</MoreButton>
       )}
     </Layout>
   )

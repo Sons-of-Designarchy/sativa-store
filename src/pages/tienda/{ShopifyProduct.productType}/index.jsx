@@ -16,11 +16,13 @@ export default function ProductTypeIndex({
       <Seo title={`Tienda`} />
       <h1 className={title}>{productType}</h1>
       <ProductListing products={products.nodes} />
-      {products.pageInfo.hasNextPage && (
-        <MoreButton to={`/search?p=${slugify(productType)}#more`}>
-          More Products
-        </MoreButton>
-      )}
+      <div className="text-center my-5">
+        {products.pageInfo.hasNextPage && (
+          <MoreButton to={`/search?p=${slugify(productType)}#more`}>
+            Cargar más productos
+          </MoreButton>
+        )}
+      </div>
     </Layout>
   )
 }

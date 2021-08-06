@@ -30,19 +30,19 @@ function Hero(props) {
               </p>
               <p className="font-lg text-dark hero-content">
                 Tenemos una{" "}
-                <a href="https://www.instagram.com/highgaang/" target="_blank">marca de lifestyle</a>,{" "}
-                <a href="https://www.pachefest.com" target="_blank">un festival</a>, y
+                <a href="https://www.instagram.com/highgaang/" target="_blank" rel="noreferrer" >marca de lifestyle</a>,{" "}
+                <a href="https://www.pachefest.com" target="_blank" rel="noreferrer" >un festival</a>, y
                 un IG con contenido educativo*{" "}
                 <span style={{ fontSize: 14 }}>
                   * que nos borraron 😢, pero volverá pronto en otro formato
                 </span>
               </p>
-              <a href="https://t.me/joinchat/CHYrw_NslEAwYjQx" target="_blank" className="sativa-btn btn-green" style={{ marginRight: "1rem" }}>Únete al Telegram</a>
+              <a href="https://t.me/joinchat/CHYrw_NslEAwYjQx" target="_blank" rel="noreferrer" className="sativa-btn btn-green" style={{ marginRight: "1rem" }}>Únete al Telegram</a>
               <a href="#newsletter" className="sativa-btn btn-purple">Suscríbete al newsletter</a>
               <span></span>
             </div>
             <div className="col-md-6">
-              <img src={HeroImage} className="img-fluid mx-auto" width="550" />
+              <img src={HeroImage} className="img-fluid mx-auto" width="550" alt="Ilustración de pareja" />
             </div>
           </div>
         </div>

@@ -23,6 +23,13 @@ module.exports = {
         shopifyConnections: ["collections"],
       },
     },
+    {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+          endpoint: 'https://gmail.us1.list-manage.com/subscribe/post?u=ff39a7add811908a64be26c94&amp;id=025613f026', // string; add your MC list endpoint here; see instructions below
+          timeout: 3500, // number; the amount of time, in milliseconds, that you want to allow mailchimp to respond to your request before timing out. defaults to 3500
+      },
+    },
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",

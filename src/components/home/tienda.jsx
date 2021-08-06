@@ -4,47 +4,69 @@ import Grid2 from "../../images/home/grid-2.jpg"
 import Grid3 from "../../images/home/grid-3.jpg"
 
 export function HomeTienda() {
-
   return (
     <div className="section section-sky">
       <div className="container text-center">
         <div className="row">
           <div className="col-lg-8 mx-auto">
-            <h4 className="text-light text-shadow-sm">Sativa</h4>
+            <h3 className="text-light text-shadow-sm mb-0">Sativa</h3>
             <h1 className="display text-light text-shadow">High Gang</h1>
             <p className="text-black mb-3">
-              Colaboramos con mujeres creativas para crear colecciones
-              temporales con diseños únicos y piezas hechas a mano
+              Diseñamos ropa para todxs lxs amantes de las flores y el arte 🌱
+              <br />
+              Nos gusta crear colecciones e invitar a artistas a colaborar en
+              ellas✨
             </p>
-            <a href="https://www.instagram.com/highgaang/" className="sativa-btn">
-              Siguenos en @highgaang
-            </a>
+            <div className="d-flex justify-content-center">
+              <div className="mr-4">
+                <a
+                  href="/tienda"
+                  className="sativa-btn btn-purple"
+                  style={{ marginRight: "1rem" }}
+                >
+                  Visitar tienda
+                </a>
+              </div>
+              <a
+                href="https://www.instagram.com/highgaang/"
+                target="_blank"
+                rel="noreferrer"
+                className="sativa-btn"
+              >
+                Siguenos en @highgaang
+              </a>
+            </div>
           </div>
         </div>
         <div className="image-grid-container container mt-5">
           <div className="row image-grid">
             <div className="col-lg-4">
               <a href="/tienda" className="image">
-                <img src={Grid1} />
+                <img src={Grid1} alt="Hombre con playera" />
               </a>
             </div>
             <div className="col-lg-4">
               <a href="/tienda" className="image">
-                <img src={Grid2} />
+                <img src={Grid2} alt="Chica con mascada" />
               </a>
             </div>
             <div className="col-lg-4">
               <a href="/tienda" className="image">
-                <img src={Grid3} />
+                <img src={Grid3} alt="Chica con playera" />
               </a>
             </div>
           </div>
+          <div className="mt-5">
+            <a
+              href="/tienda"
+              className="sativa-btn btn-purple"
+              style={{ marginRight: "1rem" }}
+            >
+              Ver más productos
+            </a>
+          </div>
         </div>
-        <div className="mt-5">
-          <a href="/tienda" className="btn btn-primary btn-lg">
-            Visitar tienda
-          </a>
-        </div>
+        <div className="mt-5"></div>
       </div>
     </div>
   )

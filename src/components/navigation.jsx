@@ -1,18 +1,18 @@
 import { graphql, useStaticQuery, Link } from "gatsby"
 import * as React from "react"
-import slugify from "@sindresorhus/slugify"
+// import slugify from "@sindresorhus/slugify"
 import { navStyle, navLink, activeLink } from "./navigation.module.css"
 
 export function Navigation({ className }) {
-  const {
-    allShopifyProduct: { productTypes },
-  } = useStaticQuery(graphql`
-    query {
-      allShopifyProduct {
-        productTypes: distinct(field: productType)
-      }
-    }
-  `)
+  // const {
+  //   allShopifyProduct: { productTypes },
+  // } = useStaticQuery(graphql`
+  //   query {
+  //     allShopifyProduct {
+  //       productTypes: distinct(field: productType)
+  //     }
+  //   }
+  // `)
 
   return (
     <nav className={[navStyle, className].join(" ")}>
@@ -37,6 +37,7 @@ export function Navigation({ className }) {
         activeClassName={activeLink}
         href="https://www.pachefest.com"
         target="_blank"
+        rel="noreferrer"
       >
         Pachefest
       </a>

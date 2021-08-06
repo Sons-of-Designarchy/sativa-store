@@ -28,14 +28,18 @@ export function Header() {
   return (
     <div className={container}>
       <header className={header}>
-        <Navigation className={nav} />
+        <div className="d-none d-md-flex" style={{ flex: 1 }}>
+          <Navigation className={nav} />
+        </div>
         <Link to="/" className={logoCss}>
           <img alt="Sativa" width="90" src={logoDesktop} />
         </Link>
-        <Link to="/search" className={searchButton}>
-          <SearchIcon />
-        </Link>
-        <CartButton quantity={quantity} />
+        <div className="menu-right">
+          <Link to="/search" className={searchButton}>
+            <SearchIcon />
+          </Link>
+          <CartButton quantity={quantity} />
+        </div>
       </header>
       <Toast show={loading || didJustAddToCart}>
         {!didJustAddToCart ? (

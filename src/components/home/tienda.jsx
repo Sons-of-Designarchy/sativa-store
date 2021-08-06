@@ -17,7 +17,7 @@ export function HomeTienda() {
               Nos gusta crear colecciones e invitar a artistas a colaborar en
               ellas✨
             </p>
-            <div className="d-flex justify-content-center">
+            <div className="d-flex sativa-btn-group justify-content-center">
               <div className="mr-4">
                 <a
                   href="/tienda"
@@ -40,17 +40,17 @@ export function HomeTienda() {
         </div>
         <div className="image-grid-container container mt-5">
           <div className="row image-grid">
-            <div className="col-lg-4">
+            <div className="col-md-4">
               <a href="/tienda" className="image">
                 <img src={Grid1} alt="Hombre con playera" />
               </a>
             </div>
-            <div className="col-lg-4">
+            <div className="col-md-4">
               <a href="/tienda" className="image">
                 <img src={Grid2} alt="Chica con mascada" />
               </a>
             </div>
-            <div className="col-lg-4">
+            <div className="col-md-4">
               <a href="/tienda" className="image">
                 <img src={Grid3} alt="Chica con playera" />
               </a>

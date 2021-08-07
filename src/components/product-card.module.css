@@ -29,6 +29,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   line-height: var(--dense);
+  color: #000;
 }
 
 .productPrice {

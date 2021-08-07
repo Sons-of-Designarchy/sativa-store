@@ -41,24 +41,24 @@ export function HomeTienda() {
         <div className="image-grid-container container mt-5">
           <div className="row image-grid">
             <div className="col-md-4">
-              <a href="/search" className="image">
+              <a href="/search/?s=BEST_SELLING" className="image">
                 <img src={Grid1} alt="Hombre con playera" />
               </a>
             </div>
             <div className="col-md-4">
-              <a href="/search" className="image">
+              <a href="/search/?s=BEST_SELLING" className="image">
                 <img src={Grid2} alt="Chica con mascada" />
               </a>
             </div>
             <div className="col-md-4">
-              <a href="/search" className="image">
+              <a href="/search/?s=BEST_SELLING" className="image">
                 <img src={Grid3} alt="Chica con playera" />
               </a>
             </div>
           </div>
           <div className="mt-5">
             <a
-              href="/search"
+              href="/search/?s=BEST_SELLING"
               className="sativa-btn btn-purple"
               style={{ marginRight: "1rem" }}
             >

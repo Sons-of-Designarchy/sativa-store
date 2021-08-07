@@ -35,7 +35,7 @@ export function Header() {
           <img alt="Sativa" width="90" src={logoDesktop} />
         </Link>
         <div className="menu-right">
-          <Link to="/search" className={searchButton}>
+          <Link to="/search/?s=BEST_SELLING" className={searchButton}>
             <SearchIcon />
           </Link>
           <CartButton quantity={quantity} />

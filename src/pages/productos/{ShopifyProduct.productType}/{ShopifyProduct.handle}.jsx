@@ -195,7 +195,7 @@ export default function Product({ data: { product, suggestions } }) {
                 available={available}
               />
             </div>
-            <div className={metaSection}>
+            {/* <div className={metaSection}>
               <span className={labelFont}>Tipo</span>
               <span className={tagList}>
                 <Link to={product.productTypeSlug}>{product.productType}</Link>
@@ -203,10 +203,10 @@ export default function Product({ data: { product, suggestions } }) {
               <span className={labelFont}>Etiquetas</span>
               <span className={tagList}>
                 {product.tags.map((tag) => (
-                  <Link to={`/tienda?t=${tag}`}>{tag}</Link>
+                  <Link to={`/products?t=${tag}`}>{tag}</Link>
                 ))}
               </span>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

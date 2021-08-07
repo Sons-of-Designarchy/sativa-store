@@ -17,7 +17,7 @@ export default function Products({
       <h1 className={title}>{vendor}</h1>
       <ProductListing products={products.nodes} />
       {products.pageInfo.hasNextPage && (
-        <MoreButton to={`/tienda?v=${slugify(vendor)}#more`}>
+        <MoreButton to={`/search?v=${slugify(vendor)}#more`}>
           More Products
         </MoreButton>
       )}

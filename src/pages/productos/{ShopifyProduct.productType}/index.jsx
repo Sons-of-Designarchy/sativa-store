@@ -14,11 +14,15 @@ export default function ProductTypeIndex({
   return (
     <Layout>
       <Seo title={`Tienda`} />
-      <h1 className={title}>{productType}</h1>
-      <ProductListing products={products.nodes} />
+      <div className="section pb-4 section-gradient text-center">
+        <h1 className="text-light text-shadow display">{productType}</h1>
+      </div>
+      <div className="py-5">
+        <ProductListing products={products.nodes} />
+      </div>
       <div className="text-center my-5">
         {products.pageInfo.hasNextPage && (
-          <MoreButton to={`/tienda?p=${slugify(productType)}#more`}>
+          <MoreButton to={`/productos?p=${slugify(productType)}#more`}>
             Cargar más productos
           </MoreButton>
         )}

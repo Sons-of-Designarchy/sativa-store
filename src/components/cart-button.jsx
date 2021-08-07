@@ -7,7 +7,7 @@ export function CartButton({ quantity }) {
   return (
     <Link
       aria-label={`Carrito de compra con ${quantity} elementos`}
-      to="/cart"
+      to="/carrito"
       className={cartButton}
     >
       <CartIcon />

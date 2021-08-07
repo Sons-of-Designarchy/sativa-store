@@ -34,10 +34,9 @@ export default function CartPage() {
       <div className={wrap}>
         {emptyCart ? (
           <div className={emptyStateContainer}>
-            <h1 className={emptyStateHeading}>Your cart is empty</h1>
+            <h1 className={emptyStateHeading}>Are u too high for this shit?</h1>
             <p>
-              Looks like you haven’t found anything yet. We understand that
-              sometimes it’s hard to chose — maybe this helps:
+            Al parecer tu carrito está vacío. Sabemos que a veces es muy complicado elegir, tal vez esto puede ayudar:
             </p>
             <Link to="/search?s=BEST_SELLING" className={emptyStateLink}>
               Ver best sellers

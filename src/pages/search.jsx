@@ -157,7 +157,10 @@ function SearchPage({
 
   return (
     <Layout>
-      <h1 className={visuallyHidden}>Resultados de búsqueda</h1>
+      <div className="section pb-4 section-gradient text-center">
+        <h1 className="text-light text-shadow display">High Gang</h1>
+        <p>Tienda oficial Sativa</p>
+      </div>
       <div className={main}>
         <div className={search} aria-hidden={modalOpen}>
           <SearchBar defaultTerm={filters.term} setFilters={setFilters} />
@@ -250,14 +253,16 @@ function SearchPage({
                 </li>
               ))}
           </ul>
-          {hasPreviousPage || hasNextPage ? (
-            <Pagination
-              previousPage={fetchPreviousPage}
-              hasPreviousPage={hasPreviousPage}
-              nextPage={fetchNextPage}
-              hasNextPage={hasNextPage}
-            />
-          ) : undefined}
+          <div className="my-5">
+            {hasPreviousPage || hasNextPage ? (
+              <Pagination
+                previousPage={fetchPreviousPage}
+                hasPreviousPage={hasPreviousPage}
+                nextPage={fetchNextPage}
+                hasNextPage={hasNextPage}
+              />
+            ) : undefined}
+          </div>
         </section>
       </div>
     </Layout>
@@ -308,19 +313,21 @@ function Pagination({ previousPage, hasPreviousPage, nextPage, hasNextPage }) {
   return (
     <nav className={pagination}>
       <button
-        className={paginationButton}
+        className="sativa-btn d-flex align-items-center m-3"
         disabled={!hasPreviousPage}
         onClick={previousPage}
         aria-label="Previous page"
       >
         <CgChevronLeft />
+        Anterior
       </button>
       <button
-        className={paginationButton}
+        className="sativa-btn d-flex align-items-center m-3"
         disabled={!hasNextPage}
         onClick={nextPage}
         aria-label="Next page"
       >
+          Siguiente
         <CgChevronRight />
       </button>
     </nav>

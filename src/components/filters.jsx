@@ -32,13 +32,13 @@ export function Filters({
   return (
     <>
       <CheckFilter
-        name="Tipo"
+        name="Tipo de producto"
         items={productTypes}
         selectedItems={filters.productTypes}
         setSelectedItems={(value) => updateFilter("productTypes", value)}
       />
       <hr />
-      <details className={priceFilterStyle} open={true}>
+      {/* <details className={priceFilterStyle} open={true}>
         <summary>
           <div className={summary}>
             Precio
@@ -78,21 +78,21 @@ export function Filters({
           />
         </div>
       </details>
-      <hr />
-      <CheckFilter
+      <hr /> */}
+      {/* <CheckFilter
         name="Marcas"
         items={vendors}
         selectedItems={filters.vendors}
         setSelectedItems={(value) => updateFilter("vendors", value)}
       />
-      <hr />
-      <CheckFilter
+      <hr /> */}
+      {/* <CheckFilter
         open={true}
         name="Etiquetas"
         items={tags}
         selectedItems={filters.tags}
         setSelectedItems={(value) => updateFilter("tags", value)}
-      />
+      /> */}
     </>
   )
 }

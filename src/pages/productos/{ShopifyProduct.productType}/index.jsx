@@ -7,29 +7,31 @@ import slugify from "@sindresorhus/slugify"
 import { MoreButton } from "../../../components/more-button"
 import { title } from "../index.module.css"
 
-export default function Products({
+export default function ProductTypeIndex({
   data: { products },
-  pageContext: { vendor },
+  pageContext: { productType },
 }) {
   return (
     <Layout>
-      <Seo title={`${vendor} products`} />
-      <h1 className={title}>{vendor}</h1>
+      <Seo title={`Tienda`} />
+      <h1 className={title}>{productType}</h1>
       <ProductListing products={products.nodes} />
-      {products.pageInfo.hasNextPage && (
-        <MoreButton to={`/search?v=${slugify(vendor)}#more`}>
-          More Products
-        </MoreButton>
-      )}
+      <div className="text-center my-5">
+        {products.pageInfo.hasNextPage && (
+          <MoreButton to={`/tienda?p=${slugify(productType)}#more`}>
+            Cargar más productos
+          </MoreButton>
+        )}
+      </div>
     </Layout>
   )
 }
 
 export const query = graphql`
-  query($vendor: String!) {
+  query($productType: String!) {
     products: allShopifyProduct(
-      filter: { vendor: { eq: $vendor } }
-      sort: { fields: publishedAt, order: DESC }
+      filter: { productType: { eq: $productType } }
+      sort: { fields: publishedAt, order: ASC }
       limit: 24
     ) {
       nodes {

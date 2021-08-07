@@ -43,6 +43,7 @@
 }
 
 .filterWrap {
+  min-width: 300px;
   overflow-y: auto;
   padding: 0 var(--size-gutter-raw);
 }
@@ -52,6 +53,10 @@
     padding: 0;
     padding-right: var(--space-xl);
   }
+}
+
+.filter {
+  height: 400px;
 }
 
 .filterStyle details {
@@ -313,16 +318,6 @@
   flex-direction: row;
   justify-content: center;
   margin-top: var(--size-gutter-raw);
-  gap: var(--space-md);
-}
-
-.paginationButton {
-  width: var(--size-input);
-  height: var(--size-input);
-  font-size: var(--text-md);
-  border-radius: var(--radius-md);
-  display: grid;
-  place-items: center;
 }
 
 .paginationButton:hover {

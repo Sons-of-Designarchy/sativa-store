@@ -86,7 +86,9 @@ export default function IndexPage({ data }) {
     <Layout>
       <Hero />
       <HomeTienda />
-      <Suscribe />
+      <div id="newsletter">
+        <Suscribe />
+      </div>
       {/* <ProductListing products={data?.shopifyCollection?.products} /> */}
     </Layout>
   )

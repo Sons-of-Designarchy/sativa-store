@@ -28,7 +28,7 @@ export function EmailListForm() {
       <div className="d-flex">
         <div style={{ marginRight: "1rem" }}>
           <input
-            placeholder="Email address"
+            placeholder="Ingresa tu correo"
             name="email"
             type="text"
             onChange={handleEmailChange}

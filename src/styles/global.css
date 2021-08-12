@@ -126,11 +126,11 @@ h6 {
 }
 
 .font-xs {
-  font-size: 0.7rem;
+  font-size: 0.7rem!important;
 }
 
 .font-sm {
-  font-size: 0.85rem;
+  font-size: 0.85rem!important;
 }
 
 .font-lg {
@@ -200,7 +200,10 @@ ul {
 }
 
 .sativa-btn {
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Cooper";
+  text-transform: uppercase;
   display: inline-block;
   align-items: center;
   justify-content: center;
@@ -214,8 +217,21 @@ ul {
   text-decoration: none;
 }
 
+
 .btn-purple {
   background: var(--primary);
+}
+
+.btn-orange {
+  background: #F7CCCB;
+}
+
+.btn-blue {
+  background: #8AD9FB;
+}
+
+.btn-yellow {
+  background: #F1E363;
 }
 
 .btn-transparent {
@@ -228,11 +244,23 @@ ul {
   padding: 0.75rem 1rem !important;
 }
 
+.btn-text {
+  border: 0!important;
+  box-shadow: none!important;
+  background: none;
+}
+
 .sativa-btn:hover {
   color: #000;
-  box-shadow: none;
-  transform: translate(3px, 3px);
 }
+
+@media (min-width: 768px) {
+  .sativa-btn:hover {
+    box-shadow: none;
+    transform: translate(3px, 3px);
+  }
+}
+
 
 .bg-primary {
   background: var(--green) !important;
@@ -339,4 +367,17 @@ ul {
 
 .footer-menu > nav {
   justify-content: center;
+}
+
+.sativa-modal {
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  padding: 1rem;
+  position: fixed;
+  left: 0rem;
+  top: 0rem;
+  bottom: 0rem;
+  right: 0rem;
+  z-index: 1000000;
+  text-align: center;
 }

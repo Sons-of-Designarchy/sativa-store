@@ -5,6 +5,7 @@ import { ProductListing } from "../components/product-listing"
 import HeroImage from "../images/we_are_sativa.png"
 import { Suscribe } from "../components/suscribe"
 import { HomeTienda } from "../components/home/tienda"
+import { ModalBruja } from "../components/modal-bruja"
 
 export const query = graphql`
   query {
@@ -88,6 +89,7 @@ export default function IndexPage({ data }) {
       <HomeTienda />
       <div id="newsletter">
         <Suscribe />
+        <ModalBruja />
       </div>
       {/* <ProductListing products={data?.shopifyCollection?.products} /> */}
     </Layout>

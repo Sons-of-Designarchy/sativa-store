@@ -6,6 +6,7 @@
 
 .container {
   padding: var(--size-gutter-raw);
+  padding-top: 3rem;
 }
 
 .header {

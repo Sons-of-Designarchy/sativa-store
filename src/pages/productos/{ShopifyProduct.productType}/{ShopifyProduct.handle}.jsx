@@ -111,7 +111,7 @@ export default function Product({ data: { product, suggestions } }) {
           image={getSrc(firstImage.gatsbyImageData)}
         />
       ) : undefined}
-      <div className={container}>
+      <div className={container} style={{ background: "#DADAFC"}}>
         <div className={productBox}>
           {hasImages && (
             <div className={productImageWrapper}>
@@ -142,18 +142,18 @@ export default function Product({ data: { product, suggestions } }) {
               </div>
               {hasMultipleImages && (
                 <div className={scrollForMore} id="instructions">
-                  <span aria-hidden="true">←</span> scroll for more{" "}
+                  <span aria-hidden="true">←</span> scrollea para mas {" "}
                   <span aria-hidden="true">→</span>
                 </div>
               )}
             </div>
           )}
           {!hasImages && (
-            <span className={noImagePreview}>No Preview image</span>
+            <span className={noImagePreview}>No hay imagen</span>
           )}
           <div>
             <div className={breadcrumb}>
-              <Link to={product.productTypeSlug}>{product.productType}</Link>
+              <Link to={product.productTypeSlug} style={{ color: "#000" }}>{product.productType}</Link>
               <ChevronIcon size={12} />
             </div>
             <h1 className={header}>{title}</h1>

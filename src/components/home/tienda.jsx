@@ -18,15 +18,6 @@ export function HomeTienda() {
               ellas✨
             </p>
             <div className="d-flex sativa-btn-group justify-content-center">
-              <div className="mr-4">
-                <a
-                  href="/tienda"
-                  className="sativa-btn btn-purple"
-                  style={{ marginRight: "1rem" }}
-                >
-                  Visitar tienda
-                </a>
-              </div>
               <a
                 href="https://www.instagram.com/highgaang/"
                 target="_blank"
@@ -40,17 +31,17 @@ export function HomeTienda() {
         </div>
         <div className="image-grid-container container mt-5">
           <div className="row image-grid">
-            <div className="col-md-4">
+            <div className="col-4">
               <a href="/search/?s=BEST_SELLING" className="image">
                 <img src={Grid1} alt="Hombre con playera" />
               </a>
             </div>
-            <div className="col-md-4">
+            <div className="col-4">
               <a href="/search/?s=BEST_SELLING" className="image">
                 <img src={Grid2} alt="Chica con mascada" />
               </a>
             </div>
-            <div className="col-md-4">
+            <div className="col-4">
               <a href="/search/?s=BEST_SELLING" className="image">
                 <img src={Grid3} alt="Chica con playera" />
               </a>
@@ -59,10 +50,10 @@ export function HomeTienda() {
           <div className="mt-5">
             <a
               href="/search/?s=BEST_SELLING"
-              className="sativa-btn btn-purple"
+              className="sativa-btn btn-purple btn-xs-block"
               style={{ marginRight: "1rem" }}
             >
-              Ver más productos
+              Visitar tienda en linea
             </a>
           </div>
         </div>

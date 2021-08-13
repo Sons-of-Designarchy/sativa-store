@@ -5,7 +5,7 @@ import { EmailListForm } from "./suscribe-form"
 export function Suscribe() {
 
   return (
-    <div className="section section-gradient">
+    <div className="section section-gradient center-xs">
       <div className="container">
         <div className="row align-items-center">
           <div className="col-lg-5">

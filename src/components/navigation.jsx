@@ -16,14 +16,16 @@ export function Navigation({ className }) {
 
   return (
     <nav className={[navStyle, className].join(" ")}>
-      <Link
-        key="All"
-        className={navLink}
-        to="/"
-        activeClassName={activeLink}
-      >
-        Inicio
-      </Link>
+      <div className="d-none d-lg-flex">
+        <Link
+          key="All"
+          className={navLink}
+          to="/"
+          activeClassName={activeLink}
+        >
+          Inicio
+        </Link>
+      </div>
       <Link
         key="All"
         className={navLink}
@@ -32,15 +34,17 @@ export function Navigation({ className }) {
       >
         Tienda
       </Link>
-      <a 
-        className={navLink}
-        activeClassName={activeLink}
-        href="https://www.pachefest.com"
-        target="_blank"
-        rel="noreferrer"
-      >
-        Pachefest
-      </a>
+      <div className="d-none d-lg-flex">
+        <a 
+          className={navLink}
+          activeClassName={activeLink}
+          href="https://www.pachefest.com"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Pachefest
+        </a>
+      </div>
       {/* {productTypes.map((name) => (
         <Link
           key={name}

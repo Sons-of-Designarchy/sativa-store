@@ -15,6 +15,7 @@ export default function ProductTypeIndex({
     <Layout>
       <Seo title={`Tienda`} />
       <div className="section pb-4 section-gradient text-center">
+        <a href="/search/?s=BEST_SELLING" className="text-dark">← Volver a la tienda</a>
         <h1 className="text-light text-shadow display">{productType}</h1>
       </div>
       <div className="py-5">

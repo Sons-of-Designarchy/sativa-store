@@ -17,7 +17,6 @@ import {
   productHeader,
   emptyStateContainer,
   emptyStateHeading,
-  emptyStateLink,
   title,
 } from "./cart.module.css"
 
@@ -34,11 +33,11 @@ export default function CartPage() {
       <div className={wrap}>
         {emptyCart ? (
           <div className={emptyStateContainer}>
-            <h1 className={emptyStateHeading}>Are u too high for this shit?</h1>
+            <h1 className={emptyStateHeading}>Too high for this shit?</h1>
             <p>
             Al parecer tu carrito está vacío. Sabemos que a veces es muy complicado elegir, tal vez esto puede ayudar:
             </p>
-            <Link to="/search?s=BEST_SELLING" className={emptyStateLink}>
+            <Link to="/search?s=BEST_SELLING" className="sativa-btn">
               Ver best sellers
             </Link>
           </div>

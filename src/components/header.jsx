@@ -1,7 +1,6 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import { StoreContext } from "../context/store-context"
-import Logo from "../icons/logo"
 import { Navigation } from "./navigation"
 import { CartButton } from "./cart-button"
 import SearchIcon from "../icons/search"
@@ -14,10 +13,14 @@ import {
   nav,
 } from "./header.module.css"
 import logoDesktop from "../images/logo.png";
+import Menu from "../images/menu.svg";
+import { ModalMenu } from "./modal-menu"
 
 export function Header() {
   const { checkout, loading, didJustAddToCart } = React.useContext(StoreContext);
   const [showMenu, setShowMenu] = React.useState(false);
+
+  console.log('showmenu', showMenu);
 
   const items = checkout ? checkout.lineItems : []
 
@@ -27,17 +30,23 @@ export function Header() {
 
   return (
     <div className={container}>
+      <ModalMenu openModal={showMenu} setOpenModal={setShowMenu} />
       <header className={header}>
         <div className="d-none d-md-flex" style={{ flex: 1 }}>
           <Navigation className={nav} />
         </div>
+        <button onClick={() => setShowMenu(!showMenu)} className={searchButton}>
+            <img src={Menu} />
+          </button>
         <Link to="/" className={logoCss}>
           <img alt="Sativa" width="90" src={logoDesktop} />
         </Link>
         <div className="menu-right">
-          <Link to="/search/?s=BEST_SELLING" className={searchButton}>
-            <SearchIcon />
-          </Link>
+          <div className="d-none d-lg-flex">
+            <Link to="/search/?s=BEST_SELLING" className={searchButton}>
+              <SearchIcon />
+            </Link>
+          </div>
           <CartButton quantity={quantity} />
         </div>
       </header>

@@ -89,8 +89,8 @@ export default function IndexPage({ data }) {
       <HomeTienda />
       <div id="newsletter">
         <Suscribe />
-        <ModalBruja />
       </div>
+      <ModalBruja />
       {/* <ProductListing products={data?.shopifyCollection?.products} /> */}
     </Layout>
   )

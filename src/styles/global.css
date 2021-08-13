@@ -52,7 +52,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.cooper {
   font-family: "Cooper", sans-serif !important;
   line-height: 100%;
   letter-spacing: -0.5px;
@@ -158,6 +159,18 @@ ul {
   color: #fff;
 }
 
+@media (max-width: 556px) {
+  .center-xs {
+    text-align: center!important;
+  }
+
+  .btn-xs-block {
+    display: block!important;
+    width: 100%;
+  }
+  
+}
+
 /* Shared css */
 
 .page-content {
@@ -200,7 +213,7 @@ ul {
 }
 
 .sativa-btn {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   font-family: "Cooper";
   text-transform: uppercase;
@@ -216,7 +229,6 @@ ul {
   transition: all ease-in 0.15s;
   text-decoration: none;
 }
-
 
 .btn-purple {
   background: var(--primary);
@@ -272,6 +284,7 @@ ul {
 
 .section-sky {
   background: url("../images/sky-bg.jpg");
+  background-size: cover;
 }
 
 .footer-social-link {
@@ -301,8 +314,6 @@ ul {
   display: block;
 }
 
-
-
 .image-grid .image:hover {
   transform: translate(4px, 4px);
   box-shadow: none;
@@ -310,6 +321,21 @@ ul {
 
 .image-grid .image img {
   max-width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .image-grid {
+    overflow: auto;
+    flex-wrap: nowrap!important;
+  }
+
+  .image-grid .col-4 {
+    width: 200px;
+  }
+
+  .image-grid .image {
+    height: auto!important;
+  }
 }
 
 @media (max-width: 556px) {
@@ -380,4 +406,17 @@ ul {
   right: 0rem;
   z-index: 1000000;
   text-align: center;
+  padding-top: 1rem;
+}
+
+.sativa-modal-close {
+  background: #fff;
+  border-radius: 2rem;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid #000;
+  box-shadow: 3px 3px 0 #000;
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
 }

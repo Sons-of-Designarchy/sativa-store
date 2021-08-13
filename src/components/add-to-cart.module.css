@@ -8,7 +8,7 @@
   border-radius: var(--radius-md);
   font-weight: var(--bold);
   align-items: center;
-  height: var(--size-input);
+  height: auto;
   justify-content: center;
   transition: var(--transition);
 }

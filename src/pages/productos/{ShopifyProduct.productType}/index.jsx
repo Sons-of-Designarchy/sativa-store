@@ -5,7 +5,6 @@ import { ProductListing } from "../../../components/product-listing"
 import { Seo } from "../../../components/seo"
 import slugify from "@sindresorhus/slugify"
 import { MoreButton } from "../../../components/more-button"
-import { title } from "../index.module.css"
 
 export default function ProductTypeIndex({
   data: { products },

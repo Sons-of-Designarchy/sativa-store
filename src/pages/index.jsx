@@ -1,30 +1,21 @@
 import * as React from "react"
-import { graphql } from "gatsby"
 import { Layout } from "../components/layout"
-import { ProductListing } from "../components/product-listing"
 import HeroImage from "../images/we_are_sativa.png"
+import HeroImage2 from "../images/hero-image.jpg"
 import { Suscribe } from "../components/suscribe"
 import { HomeTienda } from "../components/home/tienda"
 import { ModalBruja } from "../components/modal-bruja"
 
-export const query = graphql`
-  query {
-    shopifyCollection(handle: { eq: "frontpage" }) {
-      products {
-        ...ProductCard
-      }
-    }
-  }
-`
 function Hero(props) {
   return (
     <>
+      <img src={HeroImage2} />
       <div className="hero section section-gradient">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-6">
               <h1 className="display mb-4 text-light text-shadow">
-                Cannabis Self-care para la mente, cuerpo y espíritu
+                We are Sativa
               </h1>
               <p className="font-lg text-dark hero-content">
                 Somos una comunidad que busca crear espacios seguros para tener
@@ -91,7 +82,6 @@ export default function IndexPage({ data }) {
         <Suscribe />
       </div>
       <ModalBruja />
-      {/* <ProductListing products={data?.shopifyCollection?.products} /> */}
     </Layout>
   )
 }

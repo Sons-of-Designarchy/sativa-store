@@ -200,6 +200,12 @@ ul {
   padding: 4rem 0;
 }
 
+@media (max-width: 556px) {
+  .section {
+    padding: 3rem 0;
+  }
+}
+
 .section-lg {
   padding: 7rem 0;
 }

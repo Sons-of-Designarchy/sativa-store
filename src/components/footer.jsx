@@ -13,8 +13,12 @@ export function Footer() {
         </div>
         <p>Siguenos en:</p>
         <div className="px-3 mb-3">
-          <a href="https://instagram.com/@highgaang" target="_blank" className="sativa-btn d-block mb-3 btn-purple">@highgaang</a>
-          <a href="https://instagram.com/@pachefestmx " target="_blank" className="sativa-btn d-block mb-3">@pachefestmx</a>
+          <div className="px-1">
+            <a href="https://instagram.com/@highgaang" target="_blank" className="sativa-btn btn-xs-block mb-3 btn-purple">@highgaang</a>
+          </div>
+          <div className="px-1">
+            <a href="https://instagram.com/@pachefestmx " target="_blank" className="sativa-btn btn-xs-block mb-3">@pachefestmx</a>
+          </div>
         </div>
       </div>
       <p>

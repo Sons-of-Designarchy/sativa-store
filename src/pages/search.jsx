@@ -196,7 +196,7 @@ function SearchPage({
         </div>
         <section className={[filterStyle, showModal && modalOpen].join(" ")}>
           <div className={filterTitle}>
-            <h2>Filter</h2>
+            <h2>Filtrar</h2>
             <button aria-hidden onClick={() => setShowModal(false)}>
               <CrossIcon />
             </button>
@@ -223,14 +223,7 @@ function SearchPage({
               {filters.term ? ` for "${filters.term}"…` : `…`}
             </p>
           ) : (
-            <p className={resultsStyle}>
-              Resultados de búsqueda{" "}
-              {filters.term && (
-                <>
-                  for "<span>{filters.term}</span>"
-                </>
-              )}
-            </p>
+            <p className={resultsStyle}></p>
           )}
           <ul className={productListStyle}>
             {!isFetching &&

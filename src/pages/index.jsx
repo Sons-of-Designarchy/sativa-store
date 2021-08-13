@@ -10,7 +10,7 @@ function Hero(props) {
   return (
     <>
       <img src={HeroImage2} />
-      <div className="hero section section-gradient">
+      <div className="hero section section-gradient center-xs" style={{ paddingTop: "2rem" }}>
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-6">

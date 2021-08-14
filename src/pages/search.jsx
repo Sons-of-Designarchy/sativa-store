@@ -223,7 +223,14 @@ function SearchPage({
               {filters.term ? ` for "${filters.term}"…` : `…`}
             </p>
           ) : (
-            <p className={resultsStyle}></p>
+            <p className={resultsStyle}>
+              Resultados de búsqueda{" "}
+              {filters.term && (
+                <>
+                  for "<span>{filters.term}</span>"
+                </>
+              )}
+            </p>
           )}
           <ul className={productListStyle}>
             {!isFetching &&

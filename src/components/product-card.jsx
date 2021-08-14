@@ -31,7 +31,7 @@ export function ProductCard({ product, eager }) {
   const defaultImageWidth = 300
   let storefrontImageData = {}
   if (storefrontImages) {
-    const storefrontImage = storefrontImages.edges[0].node
+    const storefrontImage = storefrontImages?.edges[0]?.node
     try {
       storefrontImageData = getShopifyImage({
         image: storefrontImage,

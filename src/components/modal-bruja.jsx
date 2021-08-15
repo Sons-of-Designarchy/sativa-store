@@ -2,7 +2,7 @@ import * as React from "react"
 import logoDesktop from "../images/logo.png";
 
 export function ModalBruja() {
-  const [openModal, setOpenModal] = React.useState(true);
+  const [openModal, setOpenModal] = React.useState(false);
 
   return (
     <div className="sativa-modal section-gradient" style={ openModal ? { display: "block"} : { display: "none" }}>

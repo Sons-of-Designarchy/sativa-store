@@ -24,7 +24,7 @@ export function HomeTienda() {
                 rel="noreferrer"
                 className="sativa-btn"
               >
-                Siguenos en @highgaang
+                Síguenos en @highgaang
               </a>
             </div>
           </div>
@@ -53,7 +53,7 @@ export function HomeTienda() {
               className="sativa-btn btn-purple btn-xs-block"
               style={{ marginRight: "1rem" }}
             >
-              Visitar tienda en linea
+              Visitar tienda en línea
             </a>
           </div>
         </div>

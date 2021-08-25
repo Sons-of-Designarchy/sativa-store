@@ -36,7 +36,7 @@ export function EmailListForm() {
             style={{ marginBottom: "1rem" }}
           />
         </div>
-        <button type="submit" className="sativa-btn btn-xs-block" style={{ marginBottom: "1rem" }}>Suscribete</button>
+        <button type="submit" className="sativa-btn btn-xs-block" style={{ marginBottom: "1rem" }}>Suscríbete</button>
       </div>
       {message == 'success' && (
         <div className="form-message mt-3">

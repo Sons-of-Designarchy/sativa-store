@@ -11,7 +11,7 @@ export function Footer() {
         <div className="d-flex justify-content-center mb-3">
           <img src={Logo} alt="Sativa Logo" width="200" height="132" />
         </div>
-        <p>Siguenos en:</p>
+        <p>Síguenos en:</p>
         <div className="px-3 mb-3">
           <div className="px-1">
             <a href="https://instagram.com/highgaang" target="_blank" className="sativa-btn btn-xs-block mb-3 btn-purple">@highgaang</a>

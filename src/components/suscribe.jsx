@@ -10,9 +10,9 @@ export function Suscribe() {
         <div className="row align-items-center">
           <div className="col-lg-5">
             <h1 className="display text-shadow text-light">
-              Suscríbete al newsletter
+              Sé parte del high gaang 🤓
             </h1>
-            <p>Enterarte de todo lo nuevo que está por llegar y recibir acceso a eventos y lanzamientos exclusivos</p>
+            <p>Suscríbete al newsletter y entérate antes que nadie de nuestros eventos y lanzamientos. </p>
             <div className="mt-4">
               <EmailListForm />
             </div>

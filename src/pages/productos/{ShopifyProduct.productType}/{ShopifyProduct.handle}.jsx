@@ -100,6 +100,8 @@ export default function Product({ data: { product, suggestions } }) {
 
   const hasVariants = variants.length > 1
   const hasImages = images.length > 0
+
+  console.log(images.length);
   const hasMultipleImages = true || images.length > 1
 
   return (

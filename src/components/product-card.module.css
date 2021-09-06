@@ -17,11 +17,6 @@
   font-weight: var(--semibold);
 }
 
-.productVendorStyle {
-  font-size: var(--text-sm);
-  color: var(--text-color-secondary);
-}
-
 .productHeadingStyle {
   width: 100%;
   font-size: var(--text-lg);

@@ -45,7 +45,39 @@ export const query = graphql`
       tags: distinct(field: tags)
       vendors: distinct(field: vendor)
     }
-    products: allShopifyProduct(limit: 24, sort: { fields: title }) {
+    collections: allShopifyCollection(
+      filter: { handle: { eq: "verano-del-cohete" } }
+    ) {
+      edges {
+        node {
+          id
+          descriptionHtml
+          handle
+          products {
+            id
+            handle
+            title
+            productType
+            handle
+            priceRangeV2 {
+              minVariantPrice {
+                currencyCode
+                amount
+              }
+              maxVariantPrice {
+                currencyCode
+                amount
+              }
+            }
+            id
+            images {
+              gatsbyImageData(aspectRatio: 1, width: 200, layout: FIXED)
+            }
+          }
+        }
+      }
+    }
+    products: allShopifyProduct(limit: 24, sort: { fields: title }, filter: { handle: { eq: "frontpage" } }) {
       edges {
         node {
           title
@@ -76,12 +108,14 @@ function SearchPage({
   data: {
     meta: { productTypes, vendors, tags },
     products,
+    collections,
   },
   location,
 }) {
   // These default values come from the page query string
   const queryParams = getValuesFromQueryString(location.search)
   const [filters, setFilters] = React.useState(queryParams)
+
   const [sortKey, setSortKey] = React.useState(queryParams.sortKey)
   // We clear the hash when searching, we want to make sure the next page will be fetched due the #more hash.
   const shouldLoadNextPage = React.useRef(false)
@@ -112,7 +146,14 @@ function SearchPage({
   // If we're using the default filters, use the products from the Gatsby data layer.
   // Otherwise, use the data from search.
   const isDefault = !data
-  const productList = (isDefault ? products.edges : data?.products?.edges) ?? []
+
+
+  console.log(filters.productTypes?.length > 0 || filters.sortKey?.length > 0);
+  const isHome = filters.productTypes?.length === 0;
+
+  const productList = (isHome ? collections.edges[0].node.products : isDefault ? products.edges : data?.products?.edges) ?? []
+
+  // data?.products.edges
 
   // Scroll up when navigating
   React.useEffect(() => {
@@ -162,7 +203,7 @@ function SearchPage({
         <p>Tienda oficial Sativa</p>
       </div>
       <div className={main}>
-        <div className={search} aria-hidden={modalOpen}>
+        {/* <div className={search} aria-hidden={modalOpen}>
           <SearchBar defaultTerm={filters.term} setFilters={setFilters} />
           <button
             className={[
@@ -193,7 +234,7 @@ function SearchPage({
             </label>
             <SortIcon className={sortIcon} />
           </div>
-        </div>
+        </div> */}
         <section className={[filterStyle, showModal && modalOpen].join(" ")}>
           <div className={filterTitle}>
             <h2>Filtrar</h2>
@@ -217,41 +258,54 @@ function SearchPage({
           aria-busy={isFetching}
           aria-hidden={modalOpen}
         >
-          {isFetching ? (
+          {isFetching && (
             <p className={progressStyle}>
               <Spinner aria-valuetext="Searching" /> Searching
               {filters.term ? ` for "${filters.term}"…` : `…`}
             </p>
-          ) : (
-            <p className={resultsStyle}>
-              Resultados de búsqueda{" "}
-              {filters.term && (
-                <>
-                  for "<span>{filters.term}</span>"
-                </>
-              )}
-            </p>
           )}
           <ul className={productListStyle}>
-            {!isFetching &&
-              productList.map(({ node }, index) => (
-                <li className={productListItem} key={node.id}>
+            {!isFetching && isHome ?
+              productList.map((product, index) => (
+                <li className={productListItem} key={product.id}>
                   <ProductCard
                     eager={index === 0}
                     product={{
-                      title: node.title,
-                      priceRangeV2: node.priceRangeV2,
-                      slug: `/productos/${slugify(node.productType)}/${
-                        node.handle
+                      title: product.title,
+                      priceRangeV2: product.priceRangeV2,
+                      slug: `/productos/${slugify(product.productType)}/${
+                        product.handle
                       }`,
                       // The search API and Gatsby data layer have slightly different images available.
-                      images: isDefault ? node.images : [],
-                      storefrontImages: !isDefault && node.images,
-                      vendor: node.vendor,
+                      images: product.images,
+                      // storefrontImages: !isDefault && product.images,
+                      vendor: product.vendor,
                     }}
                   />
                 </li>
-              ))}
+              )) : (
+                <>
+                  {!isFetching &&
+                    productList.map(({ node }, index) => (
+                      <li className={productListItem} key={node.id}>
+                        <ProductCard
+                          eager={index === 0}
+                          product={{
+                            title: node.title,
+                            priceRangeV2: node.priceRangeV2,
+                            slug: `/productos/${slugify(node.productType)}/${
+                              node.handle
+                            }`,
+                            // The search API and Gatsby data layer have slightly different images available.
+                            images: isDefault ? node.images : [],
+                            storefrontImages: !isDefault && node.images,
+                            vendor: node.vendor,
+                          }}
+                        />
+                      </li>
+                    ))}
+                </>
+              )}
           </ul>
           <div className="my-5">
             {hasPreviousPage || hasNextPage ? (

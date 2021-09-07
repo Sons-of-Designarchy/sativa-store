@@ -20,8 +20,6 @@ export function Header() {
   const { checkout, loading, didJustAddToCart } = React.useContext(StoreContext);
   const [showMenu, setShowMenu] = React.useState(false);
 
-  console.log('showmenu', showMenu);
-
   const items = checkout ? checkout.lineItems : []
 
   const quantity = items.reduce((total, item) => {

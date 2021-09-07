@@ -258,6 +258,7 @@ function SearchPage({
           aria-busy={isFetching}
           aria-hidden={modalOpen}
         >
+          
           {isFetching && (
             <p className={progressStyle}>
               <Spinner aria-valuetext="Searching" /> Searching

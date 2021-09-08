@@ -30,6 +30,9 @@ export default function CartPage() {
 
   return (
     <Layout>
+      <div className="section pb-4 section-gradient text-center mb-3">
+        <h1 className="text-light text-shadow display">Tu carrito</h1>
+      </div>
       <div className={wrap}>
         {emptyCart ? (
           <div className={emptyStateContainer}>
@@ -43,14 +46,13 @@ export default function CartPage() {
           </div>
         ) : (
           <>
-            <h1 className={title}>Tu carrito</h1>
             <table className={table}>
               <thead>
                 <tr>
                   <th className={imageHeader}>Image</th>
-                  <th className={productHeader}>Product</th>
-                  <th className={collapseColumn}>Price</th>
-                  <th>Qty.</th>
+                  <th className={productHeader}>Producto</th>
+                  <th className={collapseColumn}>Precio</th>
+                  <th>Cantidad</th>
                   <th className={[totals, collapseColumn].join(" ")}>Total</th>
                 </tr>
               </thead>
@@ -75,7 +77,7 @@ export default function CartPage() {
                   <td className={collapseColumn}></td>
                   <td className={collapseColumn}></td>
                   <td className={collapseColumn}></td>
-                  <td className={labelColumn}>Taxes</td>
+                  <td className={labelColumn}>Impuestos</td>
                   <td className={totals}>
                     {formatPrice(
                       checkout.totalTaxV2.currencyCode,
@@ -87,14 +89,14 @@ export default function CartPage() {
                   <td className={collapseColumn}></td>
                   <td className={collapseColumn}></td>
                   <td className={collapseColumn}></td>
-                  <td className={labelColumn}>Shipping</td>
-                  <td className={totals}>Calculated at checkout</td>
+                  <td className={labelColumn}>Envío</td>
+                  <td className={totals}>Calculado al pagar</td>
                 </tr>
                 <tr className={grandTotal}>
                   <td className={collapseColumn}></td>
                   <td className={collapseColumn}></td>
                   <td className={collapseColumn}></td>
-                  <td className={labelColumn}>Total Price</td>
+                  <td className={labelColumn}>Precio total</td>
                   <td className={totals}>
                     {formatPrice(
                       checkout.totalPriceV2.currencyCode,

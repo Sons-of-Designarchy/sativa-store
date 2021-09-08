@@ -34,16 +34,11 @@
   display: flex;
   flex: 0 0 100%;
   white-space: nowrap;
+  padding: 1rem;
 }
 
 .scrollForMore {
   text-align: center;
-  margin-top: 1rem;
-  display: none;
-  font-size: var(--text-lg);
-  transform: translate3d(-50%, 0px, 0px);
-  left: 50%;
-  position: absolute;
 }
 
 .noImagePreview {

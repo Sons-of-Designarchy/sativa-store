@@ -234,6 +234,7 @@ ul {
   background: #c9e0ba;
   transition: all ease-in 0.15s;
   text-decoration: none;
+  display: flex;
 }
 
 .btn-purple {

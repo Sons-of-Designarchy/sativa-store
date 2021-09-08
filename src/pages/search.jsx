@@ -31,7 +31,6 @@ import {
   clearSearch,
   searchForm,
   sortIcon,
-  filterButton,
   filterTitle,
   modalOpen,
   activeFilters,
@@ -203,20 +202,17 @@ function SearchPage({
         <p>Tienda oficial Sativa</p>
       </div>
       <div className={main}>
+        <button
+          className="sativa-btn d-lg-none"
+          onClick={() => setShowModal((show) => !show)}
+          // This is hidden because the filters are already visible to
+          // screenreaders, so the modal isnt needed.
+          aria-hidden
+        >
+          Filtrar
+        </button>
         {/* <div className={search} aria-hidden={modalOpen}>
           <SearchBar defaultTerm={filters.term} setFilters={setFilters} />
-          <button
-            className={[
-              filterButton,
-              filterCount ? activeFilters : undefined,
-            ].join(" ")}
-            onClick={() => setShowModal((show) => !show)}
-            // This is hidden because the filters are already visible to
-            // screenreaders, so the modal isnt needed.
-            aria-hidden
-          >
-            <FilterIcon />
-          </button>
           <div className={sortSelector}>
             <label>
               <span>Ordenar por:</span>

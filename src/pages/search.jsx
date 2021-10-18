@@ -36,6 +36,8 @@ import {
   activeFilters,
   filterWrap,
 } from "./search-page.module.css"
+import { AboutUs } from "../components/about-us"
+import { Suscribe } from "../components/suscribe"
 
 export const query = graphql`
   query {
@@ -315,6 +317,10 @@ function SearchPage({
             ) : undefined}
           </div>
         </section>
+      </div>
+      <AboutUs />
+      <div id="newsletter">
+        <Suscribe />
       </div>
     </Layout>
   )

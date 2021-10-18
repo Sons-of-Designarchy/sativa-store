@@ -1,82 +1,16 @@
 import * as React from "react"
 import { Layout } from "../components/layout"
-import HeroImage from "../images/we_are_sativa.png"
 import HeroImage2 from "../images/hero-image.jpg"
 import { Suscribe } from "../components/suscribe"
 import { HomeTienda } from "../components/home/tienda"
 import { ModalBruja } from "../components/modal-bruja"
-
-function Hero(props) {
-  return (
-    <>
-      <img src={HeroImage2} />
-      <div className="hero section section-gradient center-xs" style={{ paddingTop: "2rem" }}>
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-md-6">
-              <h1 className="display mb-4 text-light text-shadow">
-                We are Sativa
-              </h1>
-              <p className="font-lg text-dark hero-content">
-                Somos una comunidad que busca crear espacios seguros para tener
-                una libre expresión sobre el consumo responsable y recreativo
-                del Cannabis.
-              </p>
-              <p className="font-lg text-dark hero-content">
-                Tenemos una{" "}
-                <a
-                  href="https://www.instagram.com/highgaang/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  marca de lifestyle
-                </a>
-                ,{" "}
-                <a
-                  href="https://www.pachefest.com"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  un festival
-                </a>
-                , y un IG con contenido educativo*{" "}
-                <span style={{ fontSize: 14 }}>
-                  * que nos borraron 😢, pero volverá pronto en otro formato
-                </span>
-              </p>
-              <a
-                href="https://t.me/joinchat/CHYrw_NslEAwYjQx"
-                target="_blank"
-                rel="noreferrer"
-                className="sativa-btn btn-green"
-                style={{ marginRight: "1rem", marginBottom: "1rem" }}
-              >
-                Únete al Telegram
-              </a>
-              <a href="#newsletter" className="sativa-btn btn-purple" style={{ marginRight: "1rem", marginBottom: "1rem" }}>
-                Suscríbete al newsletter
-              </a>
-              <span></span>
-            </div>
-            <div className="col-md-6">
-              <img
-                src={HeroImage}
-                className="img-fluid mx-auto"
-                width="550"
-                alt="Ilustración de pareja"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
-  )
-}
+import { AboutUs } from "../components/about-us"
 
 export default function IndexPage({ data }) {
   return (
     <Layout>
-      <Hero />
+      <img src={HeroImage2} />
+      <AboutUs />
       <HomeTienda />
       <div id="newsletter">
         <Suscribe />

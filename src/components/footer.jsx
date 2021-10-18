@@ -12,7 +12,7 @@ export function Footer() {
           <img src={Logo} alt="Sativa Logo" width="200" height="132" style={{ height: "132" }} />
         </div>
         <p>Síguenos en:</p>
-        <div className="px-3 mb-3">
+        <div className="px-3 mb-3 d-lg-flex justify-content-center">
           <div className="px-1">
             <a href="https://instagram.com/highgaang" target="_blank" className="sativa-btn btn-xs-block mb-3 btn-purple">@highgaang</a>
           </div>

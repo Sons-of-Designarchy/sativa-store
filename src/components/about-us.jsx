@@ -12,7 +12,7 @@ export function AboutUs() {
           <div className="row align-items-center">
             <div className="col-md-6">
               <h1 className="display mb-4 text-light text-shadow">
-                We are Sativa
+                We are High Gaang
               </h1>
               <p className="font-lg text-dark hero-content">
                 Somos una comunidad que busca crear espacios seguros para tener

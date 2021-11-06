@@ -8,9 +8,6 @@ export function Footer() {
   return (
     <footer className="section section-gradient text-center">
       <div className={blurb}>
-        <div className="d-flex justify-content-center mb-3">
-          <img src={Logo} alt="Sativa Logo" width="200" height="132" style={{ height: "132" }} />
-        </div>
         <p>Síguenos en:</p>
         <div className="px-3 mb-3 d-lg-flex justify-content-center">
           <div className="px-1">

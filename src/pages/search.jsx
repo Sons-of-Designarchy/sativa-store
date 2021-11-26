@@ -199,26 +199,26 @@ function SearchPage({
 
   return (
     <Layout>
-      <div className={main}>
-        main here
-        <Filters
-          setFilters={setFilters}
-          filters={filters}
-          tags={tags}
-          vendors={vendors}
-          productTypes={productTypes}
-          currencyCode={currencyCode}
-        />
-        <button
-          className="sativa-btn d-lg-none"
+      <div className="search-page">
+        <div className="container pt-4">
+          <Filters
+            setFilters={setFilters}
+            filters={filters}
+            tags={tags}
+            vendors={vendors}
+            productTypes={productTypes}
+            currencyCode={currencyCode}
+          />
+        </div>
+        {/* <button
           onClick={() => setShowModal((show) => !show)}
           // This is hidden because the filters are already visible to
           // screenreaders, so the modal isnt needed.
           aria-hidden
         >
           Filtrar
-        </button>
-        {/* <div className={search} aria-hidden={modalOpen}>
+        </button> */}
+        <div className={search} aria-hidden={modalOpen}>
           <SearchBar defaultTerm={filters.term} setFilters={setFilters} />
           <div className={sortSelector}>
             <label>
@@ -237,7 +237,7 @@ function SearchPage({
             </label>
             <SortIcon className={sortIcon} />
           </div>
-        </div> */}
+        </div>
         <section className={[filterStyle, showModal && modalOpen].join(" ")}>
 
           <div className={filterTitle}>

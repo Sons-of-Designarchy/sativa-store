@@ -31,14 +31,12 @@ export function Filters({
 
   return (
     <>
-    hi
       <CheckFilter
         name="Tipo de producto"
         items={productTypes}
         selectedItems={filters.productTypes}
         setSelectedItems={(value) => updateFilter("productTypes", value)}
       />
-      <hr />
       {/* <details className={priceFilterStyle} open={true}>
         <summary>
           <div className={summary}>

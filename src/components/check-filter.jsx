@@ -36,8 +36,8 @@ export function CheckFilter({
   }
 
   return (
-    <details open={open} className={filter}>
-      {name && (
+    <div open={open} className="filters mb-5">
+      {/* {name && (
         <summary>
           <div className={summary}>
             {name}{" "}
@@ -48,9 +48,9 @@ export function CheckFilter({
             ) : undefined}
           </div>
         </summary>
-      )}
-      <div className={filterOptions}>
-        {items.map((item) => (
+      )} */}
+      {items.map((item) => (
+        <div className="filter-item">
           <label
             className={selectedItems.includes(item) ? selectedLabel : undefined}
             key={item}
@@ -64,8 +64,8 @@ export function CheckFilter({
             />{" "}
             {item || "None"}
           </label>
-        ))}
-      </div>
-    </details>
+        </div>
+      ))}
+    </div>
   )
 }

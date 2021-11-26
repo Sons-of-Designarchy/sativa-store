@@ -431,6 +431,8 @@ ul {
 /* new styles */
 
 
+/* Navbar */
+
 .app-header {
   background: #fff;
   display: flex;
@@ -451,4 +453,22 @@ ul {
 
 .app-header-top {
   border-bottom: 1px solid #000;
+}
+
+/* Filters  */
+
+.filters {
+  background: #fff;
+  border: 1px solid #000;
+  display: flex;
+}
+
+.filter-item {
+  padding: 0.33rem 0.66rem;
+  border-right: 1px solid #000;
+  font-size: 14px;
+}
+
+.filter-item:last-child {
+  border-right: 0;
 }

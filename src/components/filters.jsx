@@ -31,6 +31,7 @@ export function Filters({
 
   return (
     <>
+    hi
       <CheckFilter
         name="Tipo de producto"
         items={productTypes}

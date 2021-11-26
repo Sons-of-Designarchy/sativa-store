@@ -427,3 +427,28 @@ ul {
   left: 1rem;
   top: 1rem;
 }
+
+/* new styles */
+
+
+.app-header {
+  background: #fff;
+  display: flex;
+  border: 1px solid #000;
+}
+
+.app-header-logo,
+.app-header-top,
+.app-header-bottom {
+  padding: 0.33rem;
+  display: flex;
+  align-items: center;
+}
+
+.app-header-logo {
+  border-right: 1px solid #000;
+}
+
+.app-header-top {
+  border-bottom: 1px solid #000;
+}

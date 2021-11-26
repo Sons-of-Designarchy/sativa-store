@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 export function Layout({ children }) {
   return (
-    <div>
+    <div style={{ background: "orange" }}>
       <Seo />
       <SkipNavLink />
       <Header />

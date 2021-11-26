@@ -199,11 +199,16 @@ function SearchPage({
 
   return (
     <Layout>
-      <div className="section pb-4 section-gradient text-center">
-        <h1 className="text-light text-shadow display">High Gang</h1>
-        <p>Tienda oficial Sativa</p>
-      </div>
       <div className={main}>
+        main here
+        <Filters
+          setFilters={setFilters}
+          filters={filters}
+          tags={tags}
+          vendors={vendors}
+          productTypes={productTypes}
+          currencyCode={currencyCode}
+        />
         <button
           className="sativa-btn d-lg-none"
           onClick={() => setShowModal((show) => !show)}
@@ -234,6 +239,7 @@ function SearchPage({
           </div>
         </div> */}
         <section className={[filterStyle, showModal && modalOpen].join(" ")}>
+
           <div className={filterTitle}>
             <h2>Filtrar</h2>
             <button aria-hidden onClick={() => setShowModal(false)}>
@@ -241,14 +247,6 @@ function SearchPage({
             </button>
           </div>
           <div className={filterWrap}>
-            <Filters
-              setFilters={setFilters}
-              filters={filters}
-              tags={tags}
-              vendors={vendors}
-              productTypes={productTypes}
-              currencyCode={currencyCode}
-            />
           </div>
         </section>
         <section

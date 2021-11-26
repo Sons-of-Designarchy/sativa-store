@@ -8,11 +8,10 @@ import { Toast } from "./toast"
 import {
   header,
   container,
-  logo as logoCss,
+  logo,
   searchButton,
   nav,
 } from "./header.module.css"
-import logoDesktop from "../images/logo.png";
 import Menu from "../images/menu.svg";
 import { ModalMenu } from "./modal-menu"
 
@@ -26,26 +25,46 @@ export function Header() {
     return total + item.quantity
   }, 0)
 
+  // TODO 
+  // - fix search input
+  // - logo
+  // - menu items
+  // - create css file
+  // - menu derecho cuando lo tengamos
+  // iconito carrito
+  // menu manual
+  // menu salga de tags
+
   return (
-    <div className={container}>
-      <ModalMenu openModal={showMenu} setOpenModal={setShowMenu} />
-      <header className={header}>
-        <div className="d-none d-md-flex" style={{ flex: 1 }}>
-          <Navigation className={nav} />
+    <div className="app-header-container">
+      {/* <ModalMenu openModal={showMenu} setOpenModal={setShowMenu} /> */}
+      <header className="app-header">
+        <Link to="/" className="app-header-logo">
+          logo high gaang
+        </Link>
+        <div className="d-none d-md-block" style={{ flex: 1 }}>
+          <div className="app-header-top">
+            <div className="d-none d-lg-flex align-items-center">
+              <Link to="/search/?s=BEST_SELLING" className={searchButton}>
+                <SearchIcon />
+              </Link>
+              Buscar
+            </div>
+            <div className="menu-right align-items-center">
+              <CartButton quantity={quantity} />
+              Carrito
+              (1)
+            </div>
+          </div>
+
+          <div className="app-header-bottom">
+            <Navigation className={nav} />
+          </div>
         </div>
-        <button onClick={() => setShowMenu(!showMenu)} className={searchButton}>
+        <div className="d-none">
+          <button onClick={() => setShowMenu(!showMenu)} className={searchButton}>
             <img src={Menu} />
           </button>
-        <Link to="/" className={logoCss}>
-          <img alt="Sativa" width="90" src={logoDesktop} />
-        </Link>
-        <div className="menu-right">
-          <div className="d-none d-lg-flex">
-            <Link to="/search/?s=BEST_SELLING" className={searchButton}>
-              <SearchIcon />
-            </Link>
-          </div>
-          <CartButton quantity={quantity} />
         </div>
       </header>
       <Toast show={loading || didJustAddToCart}>

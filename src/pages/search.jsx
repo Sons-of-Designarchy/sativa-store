@@ -205,7 +205,7 @@ function SearchPage({
       <AboutUs />
       <hr />
       <div className="search-page pt-4">
-        <h3 className="mt-4 mb-3 text-center">Nuestros productos:</h3>
+        <h3 className="mt-4 mb-4 text-center">Nuestros productos:</h3>
         <div className="container">
           {/* <div className="py-5 row">
             <h1 className="col-lg-6 display mb-3">We are High Gaang</h1>

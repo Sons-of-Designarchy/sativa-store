@@ -13,6 +13,7 @@ import {
   nav,
 } from "./header.module.css"
 import Menu from "../images/menu.svg";
+import LogoHighGaang from "../images/logo-dark.svg";
 import { ModalMenu } from "./modal-menu"
 
 export function Header() {
@@ -27,7 +28,6 @@ export function Header() {
 
   // TODO 
   // - fix search input
-  // - logo
   // - menu items
   // - create css file
   // - menu derecho cuando lo tengamos
@@ -40,7 +40,7 @@ export function Header() {
       {/* <ModalMenu openModal={showMenu} setOpenModal={setShowMenu} /> */}
       <header className="app-header">
         <Link to="/" className="app-header-logo">
-          logo high gaang
+          <img src={LogoHighGaang} />
         </Link>
         <div className="d-none d-md-block" style={{ flex: 1 }}>
           <div className="app-header-top">
@@ -58,7 +58,7 @@ export function Header() {
           </div>
 
           <div className="app-header-bottom">
-            <Navigation className={nav} />
+            <Navigation />
           </div>
         </div>
         <div className="d-none">

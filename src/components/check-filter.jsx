@@ -36,7 +36,7 @@ export function CheckFilter({
   }
 
   return (
-    <div open={open} className="filters mb-5">
+    <div open={open} className="filters">
       {/* {name && (
         <summary>
           <div className={summary}>

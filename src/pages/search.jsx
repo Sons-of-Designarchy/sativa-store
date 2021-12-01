@@ -200,7 +200,7 @@ function SearchPage({
   return (
     <Layout>
       <div className="search-page">
-        <div className="container pt-4">
+        <div className="container py-4">
           <Filters
             setFilters={setFilters}
             filters={filters}
@@ -209,47 +209,9 @@ function SearchPage({
             productTypes={productTypes}
             currencyCode={currencyCode}
           />
-        </div>
-        {/* <button
-          onClick={() => setShowModal((show) => !show)}
-          // This is hidden because the filters are already visible to
-          // screenreaders, so the modal isnt needed.
-          aria-hidden
-        >
-          Filtrar
-        </button> */}
-        <div className={search} aria-hidden={modalOpen}>
-          <SearchBar defaultTerm={filters.term} setFilters={setFilters} />
-          <div className={sortSelector}>
-            <label>
-              <span>Ordenar por:</span>
-              <select
-                value={sortKey}
-                // eslint-disable-next-line
-                onChange={(e) => setSortKey(e.target.value)}
-              >
-                <option value="RELEVANCE">Relevancia</option>
-                <option value="CREATED_AT">Nuevos items</option>
-                <option value="BEST_SELLING">Trending</option>
-                <option value="PRICE">Precio</option>
-                <option value="TITLE">Titulo</option>
-              </select>
-            </label>
-            <SortIcon className={sortIcon} />
-          </div>
-        </div>
-        <section className={[filterStyle, showModal && modalOpen].join(" ")}>
+          <h1 className="mt-4">Beanies para no tirar placa</h1>
 
-          <div className={filterTitle}>
-            <h2>Filtrar</h2>
-            <button aria-hidden onClick={() => setShowModal(false)}>
-              <CrossIcon />
-            </button>
-          </div>
-          <div className={filterWrap}>
-          </div>
-        </section>
-        <section
+          <section
           className={results}
           aria-busy={isFetching}
           aria-hidden={modalOpen}
@@ -261,25 +223,27 @@ function SearchPage({
               {filters.term ? ` for "${filters.term}"…` : `…`}
             </p>
           )}
-          <ul className={productListStyle}>
+          <div className="product-list row">
             {!isFetching && isHome ?
               productList.map((product, index) => (
-                <li className={productListItem} key={product.id}>
-                  <ProductCard
-                    eager={index === 0}
-                    product={{
-                      title: product.title,
-                      priceRangeV2: product.priceRangeV2,
-                      slug: `/productos/${slugify(product.productType)}/${
-                        product.handle
-                      }`,
-                      // The search API and Gatsby data layer have slightly different images available.
-                      images: product.images,
-                      // storefrontImages: !isDefault && product.images,
-                      vendor: product.vendor,
-                    }}
-                  />
-                </li>
+                <div className="col-xl-3 col-md-4 col-6">
+                  <div className="product-list-item product-card" key={product.id}>
+                    <ProductCard
+                      eager={index === 0}
+                      product={{
+                        title: product.title,
+                        priceRangeV2: product.priceRangeV2,
+                        slug: `/productos/${slugify(product.productType)}/${
+                          product.handle
+                        }`,
+                        // The search API and Gatsby data layer have slightly different images available.
+                        images: product.images,
+                        // storefrontImages: !isDefault && product.images,
+                        vendor: product.vendor,
+                      }}
+                    />
+                  </div>
+                </div>
               )) : (
                 <>
                   {!isFetching &&
@@ -303,7 +267,7 @@ function SearchPage({
                     ))}
                 </>
               )}
-          </ul>
+          </div>
           <div className="my-5">
             {hasPreviousPage || hasNextPage ? (
               <Pagination
@@ -315,6 +279,49 @@ function SearchPage({
             ) : undefined}
           </div>
         </section>
+
+
+
+
+        </div>
+        {/* <button
+          onClick={() => setShowModal((show) => !show)}
+          // This is hidden because the filters are already visible to
+          // screenreaders, so the modal isnt needed.
+          aria-hidden
+        >
+          Filtrar
+        </button> */}
+        {/* <div className={search} aria-hidden={modalOpen}>
+          <SearchBar defaultTerm={filters.term} setFilters={setFilters} />
+          <div className={sortSelector}>
+            <label>
+              <span>Ordenar por:</span>
+              <select
+                value={sortKey}
+                // eslint-disable-next-line
+                onChange={(e) => setSortKey(e.target.value)}
+              >
+                <option value="RELEVANCE">Relevancia</option>
+                <option value="CREATED_AT">Nuevos items</option>
+                <option value="BEST_SELLING">Trending</option>
+                <option value="PRICE">Precio</option>
+                <option value="TITLE">Titulo</option>
+              </select>
+            </label>
+            <SortIcon className={sortIcon} />
+          </div>
+        </div> */}
+        {/* <section className={[filterStyle, showModal && modalOpen].join(" ")}>
+          <div className={filterTitle}>
+            <h2>Filtrar</h2>
+            <button aria-hidden onClick={() => setShowModal(false)}>
+              <CrossIcon />
+            </button>
+          </div>
+          <div className={filterWrap}>
+          </div>
+        </section> */}
       </div>
       <AboutUs />
       <div id="newsletter">

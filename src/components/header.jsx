@@ -5,20 +5,14 @@ import { Navigation } from "./navigation"
 import { CartButton } from "./cart-button"
 import SearchIcon from "../icons/search"
 import { Toast } from "./toast"
-import {
-  header,
-  container,
-  logo,
-  searchButton,
-  nav,
-} from "./header.module.css"
-import Menu from "../images/menu.svg";
-import LogoHighGaang from "../images/logo-dark.svg";
+import { header, container, logo, searchButton, nav } from "./header.module.css"
+import Menu from "../images/menu.svg"
+import LogoHighGaang from "../images/logo-dark.svg"
 import { ModalMenu } from "./modal-menu"
 
-export function Header() {
-  const { checkout, loading, didJustAddToCart } = React.useContext(StoreContext);
-  const [showMenu, setShowMenu] = React.useState(false);
+export function Header({ headerBottom }) {
+  const { checkout, loading, didJustAddToCart } = React.useContext(StoreContext)
+  const [showMenu, setShowMenu] = React.useState(false)
 
   const items = checkout ? checkout.lineItems : []
 
@@ -26,7 +20,7 @@ export function Header() {
     return total + item.quantity
   }, 0)
 
-  // TODO 
+  // TODO
   // - fix search input
   // - menu items
   // - create css file
@@ -39,30 +33,50 @@ export function Header() {
     <div className="app-header-container">
       {/* <ModalMenu openModal={showMenu} setOpenModal={setShowMenu} /> */}
       <header className="app-header">
-        <Link to="/" className="app-header-logo">
-          <img src={LogoHighGaang} />
+        <Link to="/search/?s=BEST_SELLING" className="app-header-logo">
+          <img src={LogoHighGaang} width="130" />
         </Link>
         <div className="d-none d-md-block" style={{ flex: 1 }}>
           <div className="app-header-top">
-            <div className="d-none d-lg-flex align-items-center">
+            <Navigation />
+            {/* <div className="d-none d-lg-flex align-items-center">
               <Link to="/search/?s=BEST_SELLING" className={searchButton}>
                 <SearchIcon />
               </Link>
               Buscar
-            </div>
+            </div> */}
             <div className="menu-right align-items-center">
+              <Link
+                key="All"
+                to="https://www.pachefest.com/"
+                className="app-header-link"
+                activeClassName="app-header-link-active"
+                target="_blank"
+              >
+                Nuestro Festival
+              </Link>
+              <Link
+                key="All"
+                to="https://www.instagram.com/highgaang/"
+                className="app-header-link"
+                activeClassName="app-header-link-active"
+                target="_blank"
+              >
+                Instagram
+              </Link>
               <CartButton quantity={quantity} />
-              Carrito
-              (1)
             </div>
           </div>
 
           <div className="app-header-bottom">
-            <Navigation />
+            {headerBottom}
           </div>
         </div>
         <div className="d-none">
-          <button onClick={() => setShowMenu(!showMenu)} className={searchButton}>
+          <button
+            onClick={() => setShowMenu(!showMenu)}
+            className={searchButton}
+          >
             <img src={Menu} />
           </button>
         </div>

@@ -29,16 +29,23 @@ export default function CartPage() {
   }
 
   return (
-    <Layout>
-      <div className="section pb-4 section-gradient text-center mb-3">
-        <h1 className="text-light text-shadow display">Tu carrito</h1>
+    <Layout
+      headerBottom={
+        <a href="/search/?s=BEST_SELLING" className="app-header-link">
+          ← Volver a la tienda
+        </a>
+      }
+    >
+      <div className="section pb-4 text-center mb-3">
+        <h1 className="display">Tu carrito</h1>
       </div>
       <div className={wrap}>
         {emptyCart ? (
           <div className={emptyStateContainer}>
             <h1 className={emptyStateHeading}>Too high for this shit?</h1>
             <p>
-            Al parecer tu carrito está vacío. Sabemos que a veces es muy complicado elegir, tal vez esto puede ayudar:
+              Al parecer tu carrito está vacío. Sabemos que a veces es muy
+              complicado elegir, tal vez esto puede ayudar:
             </p>
             <Link to="/search?s=BEST_SELLING" className="sativa-btn">
               Ver best sellers

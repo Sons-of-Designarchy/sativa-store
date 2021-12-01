@@ -4,12 +4,12 @@ import { Header } from "./header"
 import { Footer } from "./footer"
 import { Seo } from "./seo"
 
-export function Layout({ children }) {
+export function Layout({ children, headerBottom }) {
   return (
-    <div style={{ background: "orange" }}>
+    <div className="layout-bg">
       <Seo />
       <SkipNavLink />
-      <Header />
+      <Header headerBottom={headerBottom} />
       <SkipNavContent>{children}</SkipNavContent>
       <Footer />
     </div>

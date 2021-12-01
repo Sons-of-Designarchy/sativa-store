@@ -11,11 +11,16 @@ export default function ProductTypeIndex({
   pageContext: { productType },
 }) {
   return (
-    <Layout>
+    <Layout
+      headerBottom={
+        <a href="/search/?s=BEST_SELLING" className="app-header-link">
+          ← Volver a la tienda
+        </a>
+      }
+    >
       <Seo title={`Tienda`} />
-      <div className="section pb-4 section-gradient text-center">
-        <a href="/search/?s=BEST_SELLING" className="text-dark">← Volver a la tienda</a>
-        <h1 className="text-light text-shadow display">{productType}</h1>
+      <div className="section pb-4 text-center">
+        <h1 className="display">{productType}</h1>
       </div>
       <div className="py-5">
         <ProductListing products={products.nodes} />
@@ -32,7 +37,7 @@ export default function ProductTypeIndex({
 }
 
 export const query = graphql`
-  query($productType: String!) {
+  query ($productType: String!) {
     products: allShopifyProduct(
       filter: { productType: { eq: $productType } }
       sort: { fields: publishedAt, order: ASC }

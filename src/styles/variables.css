@@ -1,8 +1,3 @@
-/* :root {
-  --body: #000;
-  --purple: #CFA0F5;
-  --green: #C1F7C7;
-} */
 
 :root {
   /* tokens */
@@ -10,7 +5,6 @@
   --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
-  /* palette */
   --black-fade-5: rgba(0, 0, 0, 0.05);
   --black-fade-40: rgba(0, 0, 0, 0.4);
   --grey-90: #232129;
@@ -18,6 +12,9 @@
   --green-80: #CFA0F5;
   --green-50-rgb: 55, 182, 53;
   --white: #ffffff;
+  --primary: #300057;
+  --secondary: #c9e0ba;
+  --bg: #F2EFFC;
 
   /* radii */
   --radius-sm: 4px;
@@ -60,9 +57,8 @@
   /* role-based tokens */
 
   /* colors */
-  --primary: var(--green-80);
-  --background: var(--white);
-  --border: var(--black-fade-5);
+  --background: var(--bg);
+  --border: var(--primary);
 
   /* transitions */
   --transition: box-shadow 0.125s ease-in;
@@ -72,7 +68,7 @@
 
   /* text */
   /* color */
-  --text-color: var(--grey-90);
+  --text-color: var(--primary);
   --text-color-secondary: var(--grey-50);
   --text-color-inverted: var(--white);
   /* size */

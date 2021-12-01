@@ -4,7 +4,7 @@ import logoDesktop from "../images/logo.png";
 export function ModalMenu({ openModal, setOpenModal }) {
   return (
     <div className="sativa-modal section-gradient" style={ openModal ? { display: "block"} : { display: "none" }}>
-      <button onClick={() => setOpenModal(false)} className="cooper sativa-modal-close">X</button>
+      <button onClick={() => setOpenModal(false)} className="headline sativa-modal-close">X</button>
       <div className="mb-3">
         <img alt="Sativa" width="50" src={logoDesktop} style={{ margin: "0 auto" }} />
       </div>

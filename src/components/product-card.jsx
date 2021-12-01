@@ -3,13 +3,6 @@ import { graphql, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { getShopifyImage } from "gatsby-source-shopify"
 import { formatPrice } from "../utils/format-price"
-import {
-  productCardStyle,
-  productHeadingStyle,
-  productImageStyle,
-  productDetailsStyle,
-  productPrice,
-} from "./product-card.module.css"
 
 export function ProductCard({ product, eager }) {
   const {
@@ -26,15 +19,15 @@ export function ProductCard({ product, eager }) {
     priceRangeV2.minVariantPrice.amount
   )
 
-  const defaultImageHeight = 300
-  const defaultImageWidth = 300
+  const defaultImageHeight = 470
+  const defaultImageWidth = 290
   let storefrontImageData = {}
   if (storefrontImages) {
     const storefrontImage = storefrontImages?.edges[0]?.node
     try {
       storefrontImageData = getShopifyImage({
         image: storefrontImage,
-        layout: "fixed",
+        layout: "constrained",
         width: defaultImageWidth,
         height: defaultImageHeight,
       })
@@ -47,13 +40,13 @@ export function ProductCard({ product, eager }) {
 
   return (
     <Link
-      className={productCardStyle}
+      className="product-card-container"
       to={slug}
       aria-label={`View ${title} product page`}
     >
       {hasImage
         ? (
-          <div className={productImageStyle} data-name="product-image-box">
+          <div className="product-card-image" data-name="product-image-box">
             <GatsbyImage
               alt={firstImage?.altText ?? title}
               image={firstImage?.gatsbyImageData ?? storefrontImageData}
@@ -64,11 +57,11 @@ export function ProductCard({ product, eager }) {
           <div style={{ height: defaultImageHeight, width: defaultImageWidth }} />
         )
       }
-      <div className={productDetailsStyle}>
-        <h2 as="h2" className={productHeadingStyle}>
+      <div className="product-card-details">
+        <p className="product-card-heading">
           {title}
-        </h2>
-        <div className={productPrice}>{price}</div>
+        </p>
+        <div className="product-card-price">{price}</div>
       </div>
     </Link>
   )
@@ -84,7 +77,7 @@ export const query = graphql`
     images {
       id
       altText
-      gatsbyImageData(aspectRatio: 1, width: 640)
+      gatsbyImageData(layout: CONSTRAINED, width: 640, aspectRatio: 1)
     }
     priceRangeV2 {
       minVariantPrice {

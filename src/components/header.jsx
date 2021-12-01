@@ -31,7 +31,7 @@ export function Header({ headerBottom }) {
           <div className="app-header-top">
             <button
               onClick={() => setShowMenu(!showMenu)}
-              className="app-header-link"
+              className="app-header-link d-lg-none"
             >
               <img src={Menu} />
             </button>
@@ -46,7 +46,7 @@ export function Header({ headerBottom }) {
               <Link
                 key="All"
                 to="https://www.pachefest.com/"
-                className="app-header-link d-none d-lg-block"
+                className="app-header-link d-none d-lg-inline-flex"
                 activeClassName="app-header-link-active"
                 target="_blank"
               >
@@ -55,7 +55,7 @@ export function Header({ headerBottom }) {
               <Link
                 key="All"
                 to="https://www.instagram.com/highgaang/"
-                className="app-header-link d-none d-lg-block"
+                className="app-header-link d-none d-lg-inline-flex"
                 activeClassName="app-header-link-active"
                 target="_blank"
               >

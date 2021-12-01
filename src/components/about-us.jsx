@@ -3,14 +3,13 @@ import * as React from "react"
 export function AboutUs() {
   return (
     <>
-      <hr />
-      <div className="about-container center-xs">
+      <div className="section center-xs">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-6">
               <h1 className="display mb-4">We are High Gaang</h1>
               <div className="d-flex">
-                <a
+                {/* <a
                   href="https://t.me/joinchat/CHYrw_NslEAwYjQx"
                   target="_blank"
                   rel="noreferrer"
@@ -18,14 +17,14 @@ export function AboutUs() {
                   style={{ marginRight: "1rem", marginBottom: "1rem" }}
                 >
                   Únete al Telegram
-                </a>
-                <a
+                </a> */}
+                {/* <a
                   href="#newsletter"
                   className="sativa-btn btn-green"
                   style={{ marginRight: "1rem", marginBottom: "1rem" }}
                 >
                   Suscríbete al newsletter
-                </a>
+                </a> */}
               </div>
             </div>
             <div className="col-md-6">

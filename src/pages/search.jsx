@@ -203,7 +203,10 @@ function SearchPage({
         />
       }
     >
+      <AboutUs />
+      <hr />
       <div className="search-page pt-4">
+        <h3 className="mt-4 mb-3 text-center">Nuestros productos:</h3>
         <div className="container">
           {/* <div className="py-5 row">
             <h1 className="col-lg-6 display mb-3">We are High Gaang</h1>
@@ -285,7 +288,6 @@ function SearchPage({
             </div>
           </section>
         </div>
-        <AboutUs />
         {/* <button
           onClick={() => setShowModal((show) => !show)}
           // This is hidden because the filters are already visible to

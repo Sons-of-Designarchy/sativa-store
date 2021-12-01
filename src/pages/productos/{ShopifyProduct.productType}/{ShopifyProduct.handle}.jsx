@@ -10,22 +10,12 @@ import { formatPrice } from "../../../utils/format-price"
 import { Seo } from "../../../components/seo"
 import { CgChevronRight as ChevronIcon } from "react-icons/cg"
 import {
-  productBox,
-  container,
   header,
-  productImageWrapper,
-  productImageList,
-  productImageListItem,
-  scrollForMore,
   noImagePreview,
   optionsWrapper,
   priceValue,
   selectVariant,
-  labelFont,
-  breadcrumb,
-  tagList,
   addToCartStyle,
-  metaSection,
   productDescription,
 } from "./product-page.module.css"
 
@@ -104,7 +94,17 @@ export default function Product({ data: { product, suggestions } }) {
   const hasMultipleImages = true || images.length > 1
 
   return (
-    <Layout>
+    <Layout
+      headerBottom={
+        <div className="d-flex align-items-center">
+          <Link to={product.productTypeSlug} className="app-header-link">
+            {product.productType}
+          </Link>
+          <ChevronIcon size={12} />
+          <p className="app-header-link">{title}</p>
+        </div>
+      }
+    >
       {firstImage ? (
         <Seo
           title={title}
@@ -112,21 +112,14 @@ export default function Product({ data: { product, suggestions } }) {
           image={getSrc(firstImage.gatsbyImageData)}
         />
       ) : undefined}
-      <div className={container} style={{ background: "#DADAFC"}}>
-        <div className={productBox}>
+      <div className="container product-detail">
+        <div className="row">
           {hasImages && (
-            <div className={productImageWrapper}>
-              <div
-                role="group"
-                aria-label="gallery"
-                aria-describedby="instructions"
-              >
-                <ul className={productImageList}>
-                  {images.map((image, index) => (
-                    <li
-                      key={`product-image-${image.id}`}
-                      className={productImageListItem}
-                    >
+            <div className="col-lg-8 photo-container">
+              <div className="row">
+                {images.map((image, index) => (
+                  <div key={`product-image-${image.id}`} className="col-lg product-detail-card">
+                    <div className="mb-3">
                       <GatsbyImage
                         objectFit="contain"
                         loading={index === 0 ? "eager" : "lazy"}
@@ -137,40 +130,29 @@ export default function Product({ data: { product, suggestions } }) {
                         }
                         image={image.gatsbyImageData}
                       />
-                    </li>
-                  ))}
-                </ul>
+                    </div>
+                  </div>
+                ))}
               </div>
-              {hasMultipleImages && (
-                <div className={scrollForMore} id="instructions">
-                  <span aria-hidden="true">←</span> scrollea para mas {" "}
-                  <span aria-hidden="true">→</span>
-                </div>
-              )}
             </div>
           )}
-          {!hasImages && (
-            <span className={noImagePreview}>No hay imagen</span>
-          )}
-          <div>
-            <div className={breadcrumb}>
-              <Link to={product.productTypeSlug} style={{ color: "#000" }}>{product.productType}</Link>
-              <ChevronIcon size={12} />
-            </div>
-            <h1 className={header}>{title}</h1>
+          {!hasImages && <span className={noImagePreview}>No hay imagen</span>}
+          <div className="col-lg-4">
+            <h1 className="mb-2">{title}</h1>
             <p className={productDescription}>{description}</p>
             <h2 className={priceValue}>
               <span>{price}</span>
             </h2>
-            <fieldset className={optionsWrapper}>
+            <fieldset className="d-flex">
               {hasVariants &&
                 options.map(({ id, name, values }, index) => (
-                  <div className={selectVariant} key={id}>
+                  <div className="m-1" key={id}>
                     <select
                       aria-label="Variants"
                       onChange={(event) => handleOptionChange(index, event)}
+                      className="form-select"
                     >
-                      <option value="">{`Select ${name}`}</option>
+                      <option value="">{`${name}`}</option>
                       {values.map((value) => (
                         <option value={value} key={`${name}-${value}`}>
                           {value}
@@ -180,7 +162,8 @@ export default function Product({ data: { product, suggestions } }) {
                   </div>
                 ))}
             </fieldset>
-            <div className={addToCartStyle}>
+            <div className="m-1 mb-3">
+              <p className="font-xs" style={{ marginRight: "0.33rem" }}>Cantidad:</p>
               <NumericInput
                 aria-label="Quantity"
                 onIncrement={() => setQuantity((q) => Math.min(q + 1, 20))}
@@ -190,6 +173,8 @@ export default function Product({ data: { product, suggestions } }) {
                 min="1"
                 max="20"
               />
+            </div>
+            <div className="mb-5">
               <AddToCart
                 variantId={productVariant.storefrontId}
                 quantity={quantity}
@@ -216,7 +201,7 @@ export default function Product({ data: { product, suggestions } }) {
 }
 
 export const query = graphql`
-  query($id: String!, $productType: String!) {
+  query ($id: String!, $productType: String!) {
     product: shopifyProduct(id: { eq: $id }) {
       title
       description
@@ -239,7 +224,7 @@ export const query = graphql`
       images {
         # altText
         id
-        gatsbyImageData(layout: CONSTRAINED, width: 640, aspectRatio: 1)
+        gatsbyImageData(layout: CONSTRAINED, width: 900, aspectRatio: 0.75)
       }
       variants {
         availableForSale

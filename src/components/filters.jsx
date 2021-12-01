@@ -37,7 +37,6 @@ export function Filters({
         selectedItems={filters.productTypes}
         setSelectedItems={(value) => updateFilter("productTypes", value)}
       />
-      <hr />
       {/* <details className={priceFilterStyle} open={true}>
         <summary>
           <div className={summary}>

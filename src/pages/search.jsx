@@ -14,30 +14,7 @@ import { getCurrencySymbol } from "../utils/format-price"
 import { Spinner } from "../components/progress"
 import { Filters } from "../components/filters"
 import { SearchProvider } from "../context/search-provider"
-import {
-  visuallyHidden,
-  main,
-  search,
-  searchIcon,
-  sortSelector,
-  results,
-  productList as productListStyle,
-  productListItem,
-  pagination,
-  paginationButton,
-  progressStyle,
-  resultsStyle,
-  filterStyle,
-  clearSearch,
-  searchForm,
-  sortIcon,
-  filterTitle,
-  modalOpen,
-  activeFilters,
-  filterWrap,
-} from "./search-page.module.css"
 import { AboutUs } from "../components/about-us"
-import { Suscribe } from "../components/suscribe"
 
 export const query = graphql`
   query {
@@ -72,13 +49,21 @@ export const query = graphql`
             }
             id
             images {
-              gatsbyImageData(aspectRatio: 1, width: 200, layout: FIXED)
+              gatsbyImageData(
+                aspectRatio: 0.61
+                width: 350
+                layout: CONSTRAINED
+              )
             }
           }
         }
       }
     }
-    products: allShopifyProduct(limit: 24, sort: { fields: title }, filter: { handle: { eq: "frontpage" } }) {
+    products: allShopifyProduct(
+      limit: 24
+      sort: { fields: title }
+      filter: { handle: { eq: "frontpage" } }
+    ) {
       edges {
         node {
           title
@@ -97,7 +82,11 @@ export const query = graphql`
           }
           id
           images {
-            gatsbyImageData(aspectRatio: 1, width: 200, layout: FIXED)
+            gatsbyImageData(
+              aspectRatio: 0.61
+              width: 350
+              layout: CONSTRAINED
+            )
           }
         }
       }
@@ -148,11 +137,14 @@ function SearchPage({
   // Otherwise, use the data from search.
   const isDefault = !data
 
+  const isHome = filters.productTypes?.length === 0
 
-  console.log(filters.productTypes?.length > 0 || filters.sortKey?.length > 0);
-  const isHome = filters.productTypes?.length === 0;
-
-  const productList = (isHome ? collections.edges[0].node.products : isDefault ? products.edges : data?.products?.edges) ?? []
+  const productList =
+    (isHome
+      ? collections.edges[0].node.products
+      : isDefault
+      ? products.edges
+      : data?.products?.edges) ?? []
 
   // data?.products.edges
 
@@ -198,21 +190,111 @@ function SearchPage({
   )
 
   return (
-    <Layout>
-      <div className="section pb-4 section-gradient text-center">
-        <h1 className="text-light text-shadow display">High Gang</h1>
-        <p>Tienda oficial Sativa</p>
-      </div>
-      <div className={main}>
-        <button
-          className="sativa-btn d-lg-none"
+    <Layout
+      headerBottom={
+        <Filters
+          setFilters={setFilters}
+          filters={filters}
+          tags={tags}
+          vendors={vendors}
+          productTypes={productTypes}
+          currencyCode={currencyCode}
+        />
+      }
+    >
+      <AboutUs />
+      <hr />
+      <div className="search-page pt-4">
+        <h3 className="mt-4 mb-3 text-center">Nuestros productos:</h3>
+        <div className="container">
+          {/* <div className="py-5 row">
+            <h1 className="col-lg-6 display mb-3">We are High Gaang</h1>
+            <p className="col-lg-6 font-sm">
+              Somos una comunidad que busca crear espacios seguros para tener
+              una libre expresión sobre el consumo responsable y recreativo del
+              Cannabis. Hacemos colaboraciones con artistas independientes y
+              trabajamos con productores locales.
+            </p>
+          </div> */}
+
+          <section aria-busy={isFetching}>
+            {isFetching && (
+              <p className="text-center">
+                Cargando items...
+                {filters.term ? ` for "${filters.term}"…` : `…`}
+              </p>
+            )}
+            <div className="product-list row">
+              {!isFetching && isHome ? (
+                productList.map((product, index) => (
+                  <div className="col-6 col-lg-4 col-xl-3">
+                    <div
+                      className="product-list-item product-card"
+                      key={product.id}
+                    >
+                      <ProductCard
+                        eager={index === 0}
+                        product={{
+                          title: product.title,
+                          priceRangeV2: product.priceRangeV2,
+                          slug: `/productos/${slugify(product.productType)}/${
+                            product.handle
+                          }`,
+                          // The search API and Gatsby data layer have slightly different images available.
+                          images: product.images,
+                          // storefrontImages: !isDefault && product.images,
+                          vendor: product.vendor,
+                        }}
+                      />
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <>
+                  {!isFetching &&
+                    productList.map(({ node }, index) => (
+                      <div className="col-6 col-lg-4 col-xl-3">
+                        <div className="product-list-item product-card" key={node.id}>
+                          <ProductCard
+                            eager={index === 0}
+                            product={{
+                              title: node.title,
+                              priceRangeV2: node.priceRangeV2,
+                              slug: `/productos/${slugify(node.productType)}/${
+                                node.handle
+                              }`,
+                              // The search API and Gatsby data layer have slightly different images available.
+                              images: isDefault ? node.images : [],
+                              storefrontImages: !isDefault && node.images,
+                              vendor: node.vendor,
+                            }}
+                          />
+                        </div>
+                      </div>
+                    ))}
+                </>
+              )}
+            </div>
+            <div className="my-5">
+              {hasPreviousPage || hasNextPage ? (
+                <Pagination
+                  previousPage={fetchPreviousPage}
+                  hasPreviousPage={hasPreviousPage}
+                  nextPage={fetchNextPage}
+                  hasNextPage={hasNextPage}
+                />
+              ) : undefined}
+            </div>
+          </section>
+        </div>
+        {/* <button
           onClick={() => setShowModal((show) => !show)}
           // This is hidden because the filters are already visible to
           // screenreaders, so the modal isnt needed.
           aria-hidden
         >
           Filtrar
-        </button>
+        </button> */}
         {/* <div className={search} aria-hidden={modalOpen}>
           <SearchBar defaultTerm={filters.term} setFilters={setFilters} />
           <div className={sortSelector}>
@@ -233,7 +315,7 @@ function SearchPage({
             <SortIcon className={sortIcon} />
           </div>
         </div> */}
-        <section className={[filterStyle, showModal && modalOpen].join(" ")}>
+        {/* <section className={[filterStyle, showModal && modalOpen].join(" ")}>
           <div className={filterTitle}>
             <h2>Filtrar</h2>
             <button aria-hidden onClick={() => setShowModal(false)}>
@@ -241,87 +323,12 @@ function SearchPage({
             </button>
           </div>
           <div className={filterWrap}>
-            <Filters
-              setFilters={setFilters}
-              filters={filters}
-              tags={tags}
-              vendors={vendors}
-              productTypes={productTypes}
-              currencyCode={currencyCode}
-            />
           </div>
-        </section>
-        <section
-          className={results}
-          aria-busy={isFetching}
-          aria-hidden={modalOpen}
-        >
-          
-          {isFetching && (
-            <p className={progressStyle}>
-              <Spinner aria-valuetext="Searching" /> Searching
-              {filters.term ? ` for "${filters.term}"…` : `…`}
-            </p>
-          )}
-          <ul className={productListStyle}>
-            {!isFetching && isHome ?
-              productList.map((product, index) => (
-                <li className={productListItem} key={product.id}>
-                  <ProductCard
-                    eager={index === 0}
-                    product={{
-                      title: product.title,
-                      priceRangeV2: product.priceRangeV2,
-                      slug: `/productos/${slugify(product.productType)}/${
-                        product.handle
-                      }`,
-                      // The search API and Gatsby data layer have slightly different images available.
-                      images: product.images,
-                      // storefrontImages: !isDefault && product.images,
-                      vendor: product.vendor,
-                    }}
-                  />
-                </li>
-              )) : (
-                <>
-                  {!isFetching &&
-                    productList.map(({ node }, index) => (
-                      <li className={productListItem} key={node.id}>
-                        <ProductCard
-                          eager={index === 0}
-                          product={{
-                            title: node.title,
-                            priceRangeV2: node.priceRangeV2,
-                            slug: `/productos/${slugify(node.productType)}/${
-                              node.handle
-                            }`,
-                            // The search API and Gatsby data layer have slightly different images available.
-                            images: isDefault ? node.images : [],
-                            storefrontImages: !isDefault && node.images,
-                            vendor: node.vendor,
-                          }}
-                        />
-                      </li>
-                    ))}
-                </>
-              )}
-          </ul>
-          <div className="my-5">
-            {hasPreviousPage || hasNextPage ? (
-              <Pagination
-                previousPage={fetchPreviousPage}
-                hasPreviousPage={hasPreviousPage}
-                nextPage={fetchNextPage}
-                hasNextPage={hasNextPage}
-              />
-            ) : undefined}
-          </div>
-        </section>
+        </section> */}
       </div>
-      <AboutUs />
-      <div id="newsletter">
+      {/* <div id="newsletter">
         <Suscribe />
-      </div>
+      </div> */}
     </Layout>
   )
 }
@@ -336,8 +343,8 @@ function SearchBar({ defaultTerm, setFilters }) {
   )
 
   return (
-    <form onSubmit={(e) => e.preventDefault()} className={searchForm}>
-      <SearchIcon aria-hidden className={searchIcon} />
+    <form onSubmit={(e) => e.preventDefault()} className="search-form">
+      <SearchIcon aria-hidden className="search-icon" />
       <input
         type="text"
         value={term}
@@ -349,7 +356,7 @@ function SearchBar({ defaultTerm, setFilters }) {
       />
       {term ? (
         <button
-          className={clearSearch}
+          className="clear-search"
           type="reset"
           onClick={() => {
             setTerm("")
@@ -368,7 +375,7 @@ function SearchBar({ defaultTerm, setFilters }) {
  */
 function Pagination({ previousPage, hasPreviousPage, nextPage, hasNextPage }) {
   return (
-    <nav className={pagination}>
+    <nav className="pagination">
       <button
         className="sativa-btn d-flex align-items-center m-3"
         disabled={!hasPreviousPage}
@@ -384,7 +391,7 @@ function Pagination({ previousPage, hasPreviousPage, nextPage, hasNextPage }) {
         onClick={nextPage}
         aria-label="Next page"
       >
-          Siguiente
+        Siguiente
         <CgChevronRight />
       </button>
     </nav>

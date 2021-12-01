@@ -6,12 +6,12 @@ import { Navigation } from "./navigation"
 
 export function Footer() {
   return (
-    <footer className="section section-gradient text-center">
+    <footer className="section section-purple text-center">
       <div className={blurb}>
-        <p>Síguenos en:</p>
+        <p className="mb-3">Síguenos en:</p>
         <div className="px-3 mb-3 d-lg-flex justify-content-center">
           <div className="px-1">
-            <a href="https://instagram.com/highgaang" target="_blank" className="sativa-btn btn-xs-block mb-3 btn-purple">@highgaang</a>
+            <a href="https://instagram.com/highgaang" target="_blank" className="sativa-btn btn-xs-block mb-3">@highgaang</a>
           </div>
           <div className="px-1">
             <a href="https://instagram.com/pachefestmx " target="_blank" className="sativa-btn btn-xs-block mb-3">@pachefestmx</a>

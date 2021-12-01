@@ -8,10 +8,11 @@ export function CartButton({ quantity }) {
     <Link
       aria-label={`Carrito de compra con ${quantity} elementos`}
       to="/carrito"
-      className={cartButton}
+      className="app-header-link"
     >
       <CartIcon />
-      {quantity > 0 && <div className={badge}>{quantity}</div>}
+      <span style={{ marginLeft: "0.33rem", marginRight: "0.33rem" }} className="d-none d-lg-block">Carrito</span>
+      {quantity > 0 && <div className="cart-badge">{quantity}</div>}
     </Link>
   )
 }

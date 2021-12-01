@@ -3,14 +3,13 @@ import { SkipNavContent, SkipNavLink } from "./skip-nav"
 import { Header } from "./header"
 import { Footer } from "./footer"
 import { Seo } from "./seo"
-import 'bootstrap/dist/css/bootstrap.min.css';
 
-export function Layout({ children }) {
+export function Layout({ children, headerBottom }) {
   return (
-    <div>
+    <div className="layout-bg">
       <Seo />
       <SkipNavLink />
-      <Header />
+      <Header headerBottom={headerBottom} />
       <SkipNavContent>{children}</SkipNavContent>
       <Footer />
     </div>

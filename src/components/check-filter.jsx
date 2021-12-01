@@ -1,13 +1,4 @@
 import * as React from "react"
-import {
-  filter,
-  summary,
-  filterOptions,
-  clearButton,
-  selectedLabel,
-  checkbox,
-} from "./check-filter.module.css"
-
 export function CheckFilter({
   items,
   name,
@@ -36,36 +27,31 @@ export function CheckFilter({
   }
 
   return (
-    <details open={open} className={filter}>
-      {name && (
-        <summary>
-          <div className={summary}>
-            {name}{" "}
-            {selectedItems.length ? (
-              <button className={clearButton} onClick={clearItems}>
-                Borrar filtros
-              </button>
-            ) : undefined}
-          </div>
-        </summary>
-      )}
-      <div className={filterOptions}>
+    <div open={open} className="d-flex align-items-center">
+      <div className="filters flex-1">
         {items.map((item) => (
-          <label
-            className={selectedItems.includes(item) ? selectedLabel : undefined}
-            key={item}
-          >
-            <input
-              type="checkbox"
-              className={checkbox}
-              onChange={toggleItem}
-              value={item}
-              checked={selectedItems.includes(item)}
-            />{" "}
-            {item || "None"}
-          </label>
+          <div className="filter-item">
+            <label
+              className={selectedItems?.includes(item) ? "label" : undefined}
+              key={item}
+            >
+              <input
+                type="checkbox"
+                className="checkbox"
+                onChange={toggleItem}
+                value={item}
+                checked={selectedItems.includes(item)}
+              />{" "}
+              {item || "None"}
+            </label>
+          </div>
         ))}
       </div>
-    </details>
+      {selectedItems.length ? (
+        <button onClick={clearItems} className="app-header-link filter-delete">
+          Borrar filtros
+        </button>
+      ) : undefined}
+    </div>
   )
 }

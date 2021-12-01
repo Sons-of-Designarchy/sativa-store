@@ -137,7 +137,6 @@ function SearchPage({
   // Otherwise, use the data from search.
   const isDefault = !data
 
-  console.log(filters.productTypes?.length > 0 || filters.sortKey?.length > 0)
   const isHome = filters.productTypes?.length === 0
 
   const productList =

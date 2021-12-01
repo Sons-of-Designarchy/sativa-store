@@ -11,7 +11,7 @@ export function CartButton({ quantity }) {
       className="app-header-link"
     >
       <CartIcon />
-      <span style={{ marginLeft: "0.33rem", marginRight: "0.33rem" }}>Carrito</span>
+      <span style={{ marginLeft: "0.33rem", marginRight: "0.33rem" }} className="d-none d-lg-block">Carrito</span>
       {quantity > 0 && <div className="cart-badge">{quantity}</div>}
     </Link>
   )

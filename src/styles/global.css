@@ -321,3 +321,8 @@ ul {
   background-size: cover;
   background-attachment: fixed;
 }
+
+hr {
+  border-color: var(--primary);
+  opacity: 1;
+}

@@ -69,6 +69,7 @@
 .app-header-bottom {
   display: block;
   padding: 0;
+  background: var(--bg);
 }
 
 .app-header-logo {
@@ -76,9 +77,44 @@
   padding: 0.66rem;
 }
 
+.app-header-logo img {
+  width: 130px;
+}
+
 .app-header-top {
   border-bottom: 1px solid var(--primary);
 }
+
+@media (max-width: 768px) {
+
+  .app-header-logo {
+    padding: 0.5rem;
+  }
+
+  .app-header-logo img {
+    width: 84px;
+  }
+
+  .app-header-top {
+    border-bottom: 0;
+    border-right: 0;
+  }
+
+  .app-header {
+    border: 0;
+    border-bottom: 1px solid var(--primary);
+  }
+  
+  .app-header-bottom-container {
+    overflow: auto;
+    padding-bottom: 0.5rem;
+  }
+  
+  .app-header-bottom {
+    border-bottom: 1px solid var(--primary);
+  }
+}
+
 
 .app-header-link {
   cursor: pointer;
@@ -158,6 +194,7 @@
   font-size: 14px;
   background: var(--bg);
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .filter-item-active {

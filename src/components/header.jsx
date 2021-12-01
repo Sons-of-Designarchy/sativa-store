@@ -20,24 +20,21 @@ export function Header({ headerBottom }) {
     return total + item.quantity
   }, 0)
 
-  // TODO
-  // - fix search input
-  // - menu items
-  // - create css file
-  // - menu derecho cuando lo tengamos
-  // iconito carrito
-  // menu manual
-  // menu salga de tags
-
   return (
     <div className="app-header-container">
-      {/* <ModalMenu openModal={showMenu} setOpenModal={setShowMenu} /> */}
+      <ModalMenu openModal={showMenu} setOpenModal={setShowMenu} />
       <header className="app-header">
         <Link to="/search/?s=BEST_SELLING" className="app-header-logo">
-          <img src={LogoHighGaang} width="130" />
+          <img src={LogoHighGaang} />
         </Link>
-        <div className="d-none d-md-block" style={{ flex: 1 }}>
+        <div className="d-md-block" style={{ flex: 1 }}>
           <div className="app-header-top">
+            <button
+              onClick={() => setShowMenu(!showMenu)}
+              className="app-header-link"
+            >
+              <img src={Menu} />
+            </button>
             <Navigation />
             {/* <div className="d-none d-lg-flex align-items-center">
               <Link to="/search/?s=BEST_SELLING" className={searchButton}>
@@ -49,7 +46,7 @@ export function Header({ headerBottom }) {
               <Link
                 key="All"
                 to="https://www.pachefest.com/"
-                className="app-header-link"
+                className="app-header-link d-none d-lg-block"
                 activeClassName="app-header-link-active"
                 target="_blank"
               >
@@ -58,7 +55,7 @@ export function Header({ headerBottom }) {
               <Link
                 key="All"
                 to="https://www.instagram.com/highgaang/"
-                className="app-header-link"
+                className="app-header-link d-none d-lg-block"
                 activeClassName="app-header-link-active"
                 target="_blank"
               >
@@ -67,20 +64,14 @@ export function Header({ headerBottom }) {
               <CartButton quantity={quantity} />
             </div>
           </div>
-
-          <div className="app-header-bottom">
+          <div className="app-header-bottom d-none d-lg-block">
             {headerBottom}
           </div>
         </div>
-        <div className="d-none">
-          <button
-            onClick={() => setShowMenu(!showMenu)}
-            className={searchButton}
-          >
-            <img src={Menu} />
-          </button>
-        </div>
       </header>
+      <div className="app-header-bottom-container d-lg-none">
+        <div className="app-header-bottom d-lg-none">{headerBottom}</div>
+      </div>
       <Toast show={loading || didJustAddToCart}>
         {!didJustAddToCart ? (
           "Updating…"

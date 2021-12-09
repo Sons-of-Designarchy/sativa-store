@@ -16,7 +16,7 @@ export default function IndexPage({ data }) {
   return (
     <Layout>
       <div className="text-center my-5" style={{ height: 800 }}>
-        Rolando sitio....
+        Smoke weed everyday
       </div>
     </Layout>
   )

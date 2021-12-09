@@ -5,8 +5,14 @@ import { Suscribe } from "../components/suscribe"
 import { HomeTienda } from "../components/home/tienda"
 import { ModalBruja } from "../components/modal-bruja"
 import { AboutUs } from "../components/about-us"
+import { navigate } from "@reach/router"
 
 export default function IndexPage({ data }) {
+
+  React.useEffect(() => {
+    navigate('/search/?s=BEST_SELLING/');
+  }, []);
+
   return (
     <Layout>
       {/* <img src={HeroImage2} /> */}

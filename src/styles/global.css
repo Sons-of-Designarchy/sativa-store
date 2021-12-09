@@ -322,7 +322,12 @@ ul {
 .layout-bg {
   background: url("../images/season-background.jpg") no-repeat;
   background-size: cover;
-  background-attachment: fixed;
+}
+
+@media (min-width: 769px) {
+  .layout-bg {
+    background-attachment: fixed;
+  }
 }
 
 hr {

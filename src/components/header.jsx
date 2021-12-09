@@ -72,7 +72,7 @@ export function Header({ headerBottom }) {
               <CartButton quantity={quantity} />
             </div>
           </div>
-          <div className="app-header-bottom d-none d-lg-block">
+          <div className="app-header-bottom d-none d-md-block">
             {headerBottom}
           </div>
         </div>

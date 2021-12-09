@@ -30,6 +30,13 @@ export function ModalMenu({ openModal, setOpenModal }) {
         >
           @highgaang
         </a>
+        <a
+          href="https://vm.tiktok.com/ZM8na53Ej/"
+          target="_blank"
+          className="sativa-btn d-block mb-3"
+        >
+          TikTok
+        </a>
       </div>
     </div>
   )

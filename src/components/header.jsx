@@ -3,9 +3,7 @@ import { Link } from "gatsby"
 import { StoreContext } from "../context/store-context"
 import { Navigation } from "./navigation"
 import { CartButton } from "./cart-button"
-import SearchIcon from "../icons/search"
 import { Toast } from "./toast"
-import { header, container, logo, searchButton, nav } from "./header.module.css"
 import Menu from "../images/menu.svg"
 import LogoHighGaang from "../images/logo-dark.svg"
 import { ModalMenu } from "./modal-menu"
@@ -60,6 +58,15 @@ export function Header({ headerBottom }) {
                 target="_blank"
               >
                 Instagram
+              </Link>
+              <Link
+                key="All"
+                to="https://vm.tiktok.com/ZM8na53Ej/"
+                className="app-header-link d-none d-lg-inline-flex"
+                activeClassName="app-header-link-active"
+                target="_blank"
+              >
+                TikTok
               </Link>
               <CartButton quantity={quantity} />
             </div>

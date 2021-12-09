@@ -329,3 +329,18 @@ hr {
   border-color: var(--primary);
   opacity: 1;
 }
+
+.discount-banner {
+  text-align: center;
+  font-size: 0.6rem;
+  padding: 0.5rem;
+  background: var(--primary);
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .discount-banner b {
+    display: block;
+  }
+}
+

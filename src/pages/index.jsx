@@ -15,13 +15,9 @@ export default function IndexPage({ data }) {
 
   return (
     <Layout>
-      {/* <img src={HeroImage2} /> */}
-      <AboutUs />
-      <HomeTienda />
-      <div id="newsletter">
-        <Suscribe />
+      <div className="text-center my-5" style={{ height: 400 }}>
+        Cargando sitio....
       </div>
-      <ModalBruja />
     </Layout>
   )
 }

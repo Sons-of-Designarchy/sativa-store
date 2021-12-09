@@ -107,11 +107,21 @@
   
   .app-header-bottom-container {
     overflow: auto;
-    padding-bottom: 0.5rem;
+    background: var(--bg);
   }
   
   .app-header-bottom {
     border-bottom: 1px solid var(--primary);
+  }
+
+  .filters {
+    padding-right: 150px;
+  }
+
+  .delete-filters {
+    position: absolute;
+    right: 0;
+    background: #fff;
   }
 }
 

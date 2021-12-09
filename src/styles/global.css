@@ -85,9 +85,12 @@ a:hover {
   color: inherit;
 }
 
-.a-underline {
-  border-bottom: 2px dotted;
+@media (min-width: 768px) {
+  .a-underline {
+    border-bottom: 2px dotted;
+  }
 }
+
 
 p {
   font-size: 19px;

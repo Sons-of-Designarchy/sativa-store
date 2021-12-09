@@ -3,7 +3,7 @@ require("dotenv").config()
 module.exports = {
   siteMetadata: {
     siteTitle: "Sativa",
-    siteTitleDefault: "Sativa - Inicio",
+    siteTitleDefault: "High Gaang - Inicio",
     siteUrl: "https://sativamx.com",
     hrefLang: "en",
     siteDescription:

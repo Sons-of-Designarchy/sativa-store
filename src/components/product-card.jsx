@@ -77,7 +77,11 @@ export const query = graphql`
     images {
       id
       altText
-      gatsbyImageData(layout: CONSTRAINED, width: 640, aspectRatio: 1)
+      gatsbyImageData(
+        aspectRatio: 0.61
+        width: 350
+        layout: CONSTRAINED
+      )
     }
     priceRangeV2 {
       minVariantPrice {

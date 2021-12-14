@@ -330,6 +330,13 @@ ul {
   }
 }
 
+@media (max-width: 768px) {
+  .layout-bg {
+    background-size: none;
+    background: url("../images/season-background-mobile.jpg");
+  }
+}
+
 hr {
   border-color: var(--primary);
   opacity: 1;

@@ -61,15 +61,6 @@ export function Header({ headerBottom }) {
               >
                 Instagram
               </Link>
-              <Link
-                key="All"
-                to="https://vm.tiktok.com/ZM8na53Ej/"
-                className="app-header-link d-none d-lg-inline-flex"
-                activeClassName="app-header-link-active"
-                target="_blank"
-              >
-                TikTok
-              </Link>
               <CartButton quantity={quantity} />
             </div>
           </div>

@@ -48,7 +48,7 @@ export default function CartPage() {
               Al parecer tu carrito está vacío. Sabemos que a veces es muy
               complicado elegir, tal vez esto puede ayudar:
             </p>
-            <Link to={homepageUrl} className="sativa-btn">
+            <Link to="/search?s=BEST_SELLING" className="sativa-btn">
               Ver best sellers
             </Link>
           </div>
@@ -124,7 +124,7 @@ export default function CartPage() {
               disabled={loading}
               className={checkoutButton}
             >
-              Checkout
+              Ir a pagar
             </button>
           </>
         )}

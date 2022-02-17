@@ -97,8 +97,6 @@ export default function CartPage() {
                   <td className={collapseColumn}></td>
                   <td className={collapseColumn}></td>
                   <td className={collapseColumn}></td>
-                  <td className={labelColumn}>Descuento</td>
-                  <td className={totals}>15% off - Holidays</td>
                 </tr>
                 <tr className={summary}>
                   <td className={collapseColumn}></td>

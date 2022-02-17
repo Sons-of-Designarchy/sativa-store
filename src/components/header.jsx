@@ -21,7 +21,7 @@ export function Header({ headerBottom }) {
 
   return (
     <div className="app-header-container">
-      <div className="discount-banner"><b>High Gaang Holidays!</b> 15% de descuento en toda la tienda del 1 al 24 de Dic - aplicado directo en tu carrito :)</div>
+      {/* <div className="discount-banner"><b>High Gaang Holidays!</b> 15% de descuento en toda la tienda del 1 al 24 de Dic - aplicado directo en tu carrito :)</div> */}
       <ModalMenu openModal={showMenu} setOpenModal={setShowMenu} />
       <header className="app-header">
         <Link to={homepageUrl} className="app-header-logo">

@@ -2,6 +2,7 @@ import * as React from "react"
 import Grid1 from "../../images/home/grid-1.jpg"
 import Grid2 from "../../images/home/grid-2.jpg"
 import Grid3 from "../../images/home/grid-3.jpg"
+import { homepageUrl } from "../../pages"
 
 export function HomeTienda() {
   return (
@@ -32,24 +33,24 @@ export function HomeTienda() {
         <div className="image-grid-container container mt-5">
           <div className="row image-grid">
             <div className="col-4">
-              <a href="/search/?s=BEST_SELLING" className="image">
+              <a href={homepageUrl} className="image">
                 <img src={Grid1} alt="Hombre con playera" />
               </a>
             </div>
             <div className="col-4">
-              <a href="/search/?s=BEST_SELLING" className="image">
+              <a href={homepageUrl} className="image">
                 <img src={Grid2} alt="Chica con mascada" />
               </a>
             </div>
             <div className="col-4">
-              <a href="/search/?s=BEST_SELLING" className="image">
+              <a href={homepageUrl} className="image">
                 <img src={Grid3} alt="Chica con playera" />
               </a>
             </div>
           </div>
           <div className="mt-5">
             <a
-              href="/search/?s=BEST_SELLING"
+              href={homepageUrl}
               className="sativa-btn btn-purple btn-xs-block"
               style={{ marginRight: "1rem" }}
             >

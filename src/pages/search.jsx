@@ -143,8 +143,8 @@ function SearchPage({
     (isHome
       ? collections.edges[0].node.products
       : isDefault
-      ? products.edges
-      : data?.products?.edges) ?? []
+        ? products.edges
+        : data?.products?.edges) ?? []
 
   // data?.products.edges
 
@@ -190,18 +190,7 @@ function SearchPage({
   )
 
   return (
-    <Layout
-      headerBottom={
-        <Filters
-          setFilters={setFilters}
-          filters={filters}
-          tags={tags}
-          vendors={vendors}
-          productTypes={productTypes}
-          currencyCode={currencyCode}
-        />
-      }
-    >
+    <Layout>
       <AboutUs />
       <hr />
       <div className="search-page pt-4">
@@ -237,9 +226,8 @@ function SearchPage({
                         product={{
                           title: product.title,
                           priceRangeV2: product.priceRangeV2,
-                          slug: `/productos/${slugify(product.productType)}/${
-                            product.handle
-                          }`,
+                          slug: `/productos/${slugify(product.productType)}/${product.handle
+                            }`,
                           // The search API and Gatsby data layer have slightly different images available.
                           images: product.images,
                           // storefrontImages: !isDefault && product.images,
@@ -260,9 +248,8 @@ function SearchPage({
                             product={{
                               title: node.title,
                               priceRangeV2: node.priceRangeV2,
-                              slug: `/productos/${slugify(node.productType)}/${
-                                node.handle
-                              }`,
+                              slug: `/productos/${slugify(node.productType)}/${node.handle
+                                }`,
                               // The search API and Gatsby data layer have slightly different images available.
                               images: isDefault ? node.images : [],
                               storefrontImages: !isDefault && node.images,

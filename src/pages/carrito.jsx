@@ -19,6 +19,7 @@ import {
   emptyStateHeading,
   title,
 } from "./cart.module.css"
+import { homepageUrl } from "."
 
 export default function CartPage() {
   const { checkout, loading } = React.useContext(StoreContext)
@@ -31,8 +32,8 @@ export default function CartPage() {
   return (
     <Layout
       headerBottom={
-        <a href="/search/?s=BEST_SELLING" className="app-header-link">
-          ← Volver a la tienda
+        <a href={homepageUrl} className="app-header-link">
+          ← Volver al inicio
         </a>
       }
     >
@@ -47,7 +48,7 @@ export default function CartPage() {
               Al parecer tu carrito está vacío. Sabemos que a veces es muy
               complicado elegir, tal vez esto puede ayudar:
             </p>
-            <Link to="/search?s=BEST_SELLING" className="sativa-btn">
+            <Link to={homepageUrl} className="sativa-btn">
               Ver best sellers
             </Link>
           </div>

@@ -18,6 +18,7 @@ import {
   addToCartStyle,
   productDescription,
 } from "./product-page.module.css"
+import { homepageUrl } from "../.."
 
 export default function Product({ data: { product, suggestions } }) {
   const {
@@ -97,6 +98,10 @@ export default function Product({ data: { product, suggestions } }) {
     <Layout
       headerBottom={
         <div className="d-flex align-items-center">
+          <Link to={homepageUrl} className="app-header-link">
+            Inicio
+          </Link>
+          <ChevronIcon size={12} />
           <Link to={product.productTypeSlug} className="app-header-link">
             {product.productType}
           </Link>

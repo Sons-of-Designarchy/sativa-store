@@ -7,10 +7,12 @@ import { ModalBruja } from "../components/modal-bruja"
 import { AboutUs } from "../components/about-us"
 import { navigate } from "@reach/router"
 
+export const homepageUrl = "/search";
+
 export default function IndexPage({ data }) {
 
   React.useEffect(() => {
-    navigate('/search/?s=BEST_SELLING/');
+    navigate(homepageUrl);
   }, []);
 
   return (

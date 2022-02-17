@@ -5,6 +5,7 @@ import { ProductListing } from "../../../components/product-listing"
 import { Seo } from "../../../components/seo"
 import slugify from "@sindresorhus/slugify"
 import { MoreButton } from "../../../components/more-button"
+import { homepageUrl } from "../.."
 
 export default function ProductTypeIndex({
   data: { products },
@@ -13,8 +14,8 @@ export default function ProductTypeIndex({
   return (
     <Layout
       headerBottom={
-        <a href="/search/?s=BEST_SELLING" className="app-header-link">
-          ← Volver a la tienda
+        <a href={homepageUrl} className="app-header-link">
+          ← Volver al inicio
         </a>
       }
     >

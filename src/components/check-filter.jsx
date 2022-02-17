@@ -31,7 +31,8 @@ export function CheckFilter({
       <div className="filters flex-1">
         {items.map((item) => (
           <div className="filter-item">
-            <label
+            <a href={`/productos/${item.toLowerCase().replace(" ","-")}`}>{item}</a>
+            {/* <label
               className={selectedItems?.includes(item) ? "label" : undefined}
               key={item}
             >
@@ -43,7 +44,7 @@ export function CheckFilter({
                 checked={selectedItems.includes(item)}
               />{" "}
               {item || "None"}
-            </label>
+            </label> */}
           </div>
         ))}
       </div>

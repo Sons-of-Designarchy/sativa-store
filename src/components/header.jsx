@@ -7,6 +7,7 @@ import { Toast } from "./toast"
 import Menu from "../images/menu.svg"
 import LogoHighGaang from "../images/logo-dark.svg"
 import { ModalMenu } from "./modal-menu"
+import { homepageUrl } from "../pages"
 
 export function Header({ headerBottom }) {
   const { checkout, loading, didJustAddToCart } = React.useContext(StoreContext)
@@ -23,7 +24,7 @@ export function Header({ headerBottom }) {
       <div className="discount-banner"><b>High Gaang Holidays!</b> 15% de descuento en toda la tienda del 1 al 24 de Dic - aplicado directo en tu carrito :)</div>
       <ModalMenu openModal={showMenu} setOpenModal={setShowMenu} />
       <header className="app-header">
-        <Link to="/search/?s=BEST_SELLING" className="app-header-logo">
+        <Link to={homepageUrl} className="app-header-logo">
           <img src={LogoHighGaang} />
         </Link>
         <div className="d-md-block" style={{ flex: 1 }}>
@@ -34,7 +35,7 @@ export function Header({ headerBottom }) {
             >
               <img src={Menu} />
             </button>
-            <Navigation />
+            {/* <Navigation /> */}
             {/* <div className="d-none d-lg-flex align-items-center">
               <Link to="/search/?s=BEST_SELLING" className={searchButton}>
                 <SearchIcon />
@@ -73,13 +74,20 @@ export function Header({ headerBottom }) {
             </div>
           </div>
           <div className="app-header-bottom d-none d-md-block">
-            {headerBottom}
+            <Navigation />
           </div>
         </div>
       </header>
       <div className="app-header-bottom-container d-lg-none">
-        <div className="app-header-bottom d-lg-none">{headerBottom}</div>
+        <div className="app-header-bottom">
+          <Navigation />
+        </div>
       </div>
+      {headerBottom && (
+        <div className="app-header-bottom bordered-bottom">
+          {headerBottom}
+        </div>
+      )}
       <Toast show={loading || didJustAddToCart}>
         {!didJustAddToCart ? (
           "Updating…"

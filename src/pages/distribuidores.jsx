@@ -3,13 +3,14 @@ import { Layout } from "../components/layout"
 import Hipnosis from "../images/tiendas/hipnosis.jpg"
 import Incendiarias from "../images/tiendas/incendiarias.jpg"
 import ChicksVsStigma from "../images/tiendas/chicks.png"
+import { homepageUrl } from "."
 
 export default function Distribuidores() {
   return (
     <Layout
       headerBottom={
-        <a href="/search/?s=BEST_SELLING" className="app-header-link">
-          ← Volver a la tienda
+        <a href={homepageUrl} className="app-header-link">
+          ← Volver al inicio
         </a>
       }
     >

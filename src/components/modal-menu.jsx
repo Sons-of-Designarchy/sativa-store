@@ -1,5 +1,6 @@
 import * as React from "react"
 import logoDesktop from "../images/logo.png"
+import { homepageUrl } from "../pages"
 
 export function ModalMenu({ openModal, setOpenModal }) {
   return (
@@ -14,7 +15,7 @@ export function ModalMenu({ openModal, setOpenModal }) {
         X
       </button>
       <div style={{ marginTop: "3rem" }}>
-        <a href="/search/?s=BEST_SELLING" className="sativa-btn d-block mb-3">
+        <a href={homepageUrl} className="sativa-btn d-block mb-3">
           Tienda
         </a>
         <a

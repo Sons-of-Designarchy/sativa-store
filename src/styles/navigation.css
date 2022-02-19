@@ -54,8 +54,8 @@
   display: flex;
   color: var(--text-color);
   align-items: center;
-  padding-left: var(--space-lg);
-  padding-right: var(--space-lg);
+  padding-left: 1vw;
+  padding-right: 1vw;
   font-size: 0.7rem;
   font-weight: 500;
   max-height: 41px;
@@ -126,6 +126,11 @@
   .app-header-top {
     border-bottom: 0;
     border-right: 0;
+  }
+
+  .app-header-link {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .a-header-mobile-menu .app-header-link {

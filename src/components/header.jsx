@@ -104,14 +104,6 @@ export function Header({ headerBottom }) {
             </div>
             <div className="app-header-bottom d-none d-md-block">
               <div className="d-flex flex-1">
-                <Link
-                  key="All"
-                  className="app-header-link"
-                  to="/search/"
-                  activeClassName="app-header-link-active"
-                >
-                  Home
-                </Link>
                 <Navigation />
               </div>
             </div>

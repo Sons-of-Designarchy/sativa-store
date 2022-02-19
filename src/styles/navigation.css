@@ -1,0 +1,156 @@
+/* Navbar */
+
+.app-header {
+  background: var(--bg);
+  display: flex;
+  border: 1px solid var(--primary);
+  z-index: 1000;
+}
+
+.a-header-mobile-menu {
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  position: fixed;
+  left: 0;
+  top: 60px;
+  bottom: 0rem;
+  right: 0rem;
+  z-index: 1000000;
+  text-align: center;
+  background: #fff;
+}
+
+.app-header-logo,
+.app-header-top,
+.app-header-bottom {
+  padding: 0.33rem;
+  display: flex;
+  align-items: center;
+}
+
+.app-header-bottom {
+  display: block;
+  padding: 0;
+  background: var(--bg);
+}
+
+.app-header-logo {
+  border-right: 1px solid var(--primary);
+  padding: 0.66rem;
+}
+
+.app-header-logo img {
+  width: 130px;
+}
+
+.app-header-top {
+  border-bottom: 1px solid var(--primary);
+}
+
+.app-header-link {
+  cursor: pointer;
+  text-decoration: none;
+  height: var(--size-input);
+  display: flex;
+  color: var(--text-color);
+  align-items: center;
+  padding-left: var(--space-lg);
+  padding-right: var(--space-lg);
+  font-size: 0.7rem;
+  font-weight: 500;
+  max-height: 41px;
+  white-space: nowrap;
+}
+
+.app-header-link:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.activeLink,
+.app-header-link[aria-active="page"] {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.activeLink:hover,
+.app-header-link[aria-active="page"]:hover {
+  color: var(--primary);
+}
+
+/* desktop only */
+
+@media (min-width: 769px) {
+  .mobile-nav {
+    display: none;
+  }
+}
+
+/* mobile only */
+
+@media (max-width: 768px) {
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .app-header {
+    border: 0;
+    border-bottom: 1px solid var(--primary);
+    align-items: center;
+    justify-content: space-between;
+    min-height: 60px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  .app-header-bottom-container {
+    overflow: auto;
+    background: var(--bg);
+  }
+  
+  .app-header-bottom {
+    border-bottom: 1px solid var(--primary);
+  }
+
+  .app-header-logo {
+    padding: 0.5rem;
+    border-right: 0;
+  }
+
+  .app-header-logo img {
+    width: 84px;
+  }
+
+  .app-header-top {
+    border-bottom: 0;
+    border-right: 0;
+  }
+
+  .a-header-mobile-menu .app-header-link {
+    font-family: "Prettywise";
+    font-size: 20px;
+    font-weight: 600;
+    padding: 1.5rem 1rem;
+  }
+
+  .mobile-categories {
+    padding-bottom: 1rem;
+  }
+
+  .mobile-categories .app-header-link {
+    padding: 1.5rem 1rem .5rem;
+  }
+
+  .filters {
+    padding-right: 150px;
+  }
+
+  .delete-filters {
+    position: absolute;
+    right: 0;
+    background: #fff;
+  }
+}
+

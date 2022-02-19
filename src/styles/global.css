@@ -3,6 +3,12 @@ body {
   color: var(--text-color);
 }
 
+@media (max-width: 768px) {
+  body {
+    padding-top: 60px;
+  }
+}
+
 .gatsby-image-wrapper {
   margin: auto;
 }
@@ -14,6 +20,13 @@ body {
 @font-face {
   font-family: "Prettywise";
   src: url("../fonts/prettywise-light.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Prettywise";
+  font-weight: 600;
+  src: url("../fonts/prettywise-semibold.ttf");
 }
 
 @font-face {
@@ -322,6 +335,18 @@ ul {
 .layout-bg {
   background: url("../images/season-background.jpg") no-repeat;
   background-size: cover;
+}
+
+.green-bg {
+  background: #EAF7D5;
+}
+
+.pink-bg {
+  background: #F7DDDC;
+}
+
+.purple-bg {
+  background: #DEDCF7;
 }
 
 @media (min-width: 769px) {

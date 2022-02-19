@@ -14,15 +14,7 @@ export function Navigation({ className }) {
   `)
 
   return (
-    <nav className="d-flex flex-1">
-      <Link
-        key="All"
-        className="app-header-link"
-        to="/search/"
-        activeClassName="app-header-link-active"
-      >
-        Home
-      </Link>
+    <>
       {productTypes.map((name) => (
         <Link
           key={name}
@@ -33,6 +25,6 @@ export function Navigation({ className }) {
           {name}
         </Link>
       ))}
-    </nav>
+    </>
   )
 }

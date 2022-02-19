@@ -3,7 +3,6 @@ import { Layout } from "../components/layout"
 // import HeroImage2 from "../images/hero-image.jpg"
 import { Suscribe } from "../components/suscribe"
 import { HomeTienda } from "../components/home/tienda"
-import { ModalBruja } from "../components/modal-bruja"
 import { AboutUs } from "../components/about-us"
 import { navigate } from "@reach/router"
 

@@ -3,7 +3,6 @@ import { SkipNavContent, SkipNavLink } from "./skip-nav"
 import { Header } from "./header"
 import { Footer } from "./footer"
 import { Seo } from "./seo"
-import { SearchProvider } from "../context/search-provider"
 
 export function Layout({ children, headerBottom }) {
   return (
@@ -11,9 +10,7 @@ export function Layout({ children, headerBottom }) {
       <Seo />
       <SkipNavLink />
       <Header headerBottom={headerBottom} />
-      <SearchProvider>
-        <SkipNavContent>{children}</SkipNavContent>
-      </SearchProvider>
+      <SkipNavContent>{children}</SkipNavContent>
       <Footer />
     </div>
   )

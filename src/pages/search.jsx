@@ -196,15 +196,6 @@ function SearchPage({
       <div className="search-page pt-4">
         <h3 className="mt-4 mb-4 text-center">Nuestros productos:</h3>
         <div className="container">
-          {/* <div className="py-5 row">
-            <h1 className="col-lg-6 display mb-3">We are High Gaang</h1>
-            <p className="col-lg-6 font-sm">
-              Somos una comunidad que busca crear espacios seguros para tener
-              una libre expresión sobre el consumo responsable y recreativo del
-              Cannabis. Hacemos colaboraciones con artistas independientes y
-              trabajamos con productores locales.
-            </p>
-          </div> */}
 
           <section aria-busy={isFetching}>
             {isFetching && (

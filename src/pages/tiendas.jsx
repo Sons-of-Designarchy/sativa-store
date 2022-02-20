@@ -5,7 +5,7 @@ import Incendiarias from "../images/tiendas/incendiarias.jpg"
 import ChicksVsStigma from "../images/tiendas/chicks.png"
 import { homepageUrl } from "."
 
-export default function Distribuidores() {
+export default function Tiendas() {
   return (
     <Layout
       headerBottom={
@@ -62,6 +62,12 @@ export default function Distribuidores() {
               </a>
             </div>
           </div>
+        </div>
+      </div>
+      <hr />
+      <div className="section">
+        <div className="container">
+          <p className="text-center">¿Te interesa tener High Gaang en tu tienda o evento? <a href="mailto:hola.sativa.mx@gmail.com">Contáctanos</a></p>
         </div>
       </div>
     </Layout>

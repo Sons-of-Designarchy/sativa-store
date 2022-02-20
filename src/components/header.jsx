@@ -88,7 +88,16 @@ export function Header({ headerBottom }) {
                   activeClassName="app-header-link-active"
                   target="_blank"
                 >
-                  Pachefest
+                  Nuestro Festival
+                </Link>
+                <Link
+                  key="All"
+                  to="/tiendas/"
+                  className="app-header-link d-none d-lg-inline-flex"
+                  activeClassName="app-header-link-active"
+  
+                >
+                  Tiendas
                 </Link>
                 <Link
                   key="All"

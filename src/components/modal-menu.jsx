@@ -36,20 +36,20 @@ export function ModalMenu({ openModal, setOpenModal }) {
       >
         Rebajas
       </Link> */}
-      {/* <Link
+      <Link
         key="All"
-        className="app-header-link green-bg bordered-bottom"
-        to="/search/?s=BEST_SELLING"
+        className="app-header-link bordered-bottom"
+        to="/tiendas/"
         activeClassName="app-header-link-active"
       >
         Tiendas
-      </Link> */}
+      </Link>
       <a
         href="https://www.pachefest.com"
         className="app-header-link bordered-bottom"
         target="_blank"
       >
-        Nuestro festival
+        Nuestro Festival
       </a>
       <a
         href="https://instagram.com/highgaang"

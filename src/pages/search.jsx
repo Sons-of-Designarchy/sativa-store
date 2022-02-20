@@ -33,6 +33,7 @@ export const query = graphql`
             title
             productType
             handle
+            totalInventory
             priceRangeV2 {
               minVariantPrice {
                 currencyCode
@@ -56,7 +57,7 @@ export const query = graphql`
       }
     }
     products: allShopifyProduct(
-      limit: 24
+      limit: 50
       sort: { fields: title }
       filter: { handle: { eq: "frontpage" } }
     ) {
@@ -66,6 +67,7 @@ export const query = graphql`
           vendor
           productType
           handle
+          totalInventory
           priceRangeV2 {
             minVariantPrice {
               currencyCode
@@ -215,6 +217,7 @@ function SearchPage({
                       images: product.images,
                       // storefrontImages: !isDefault && product.images,
                       vendor: product.vendor,
+                      totalInventory: product.totalInventory
                     }}
                   />
                 ))

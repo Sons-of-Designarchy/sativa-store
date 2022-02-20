@@ -10,9 +10,11 @@ export function ProductCard({ product, eager }) {
     priceRangeV2,
     slug,
     images: [firstImage],
-    vendor,
     storefrontImages,
+    totalInventory,
   } = product
+
+  const available = totalInventory > 0;
 
   const price = formatPrice(
     priceRangeV2.minVariantPrice.currencyCode,
@@ -48,6 +50,11 @@ export function ProductCard({ product, eager }) {
         {hasImage
           ? (
             <div className="product-card-image" data-name="product-image-box">
+              {!available && (
+                <div className="product-out badge badge-sm bg-danger">
+                  Agotado
+                </div>
+              )}
               <GatsbyImage
                 alt={firstImage?.altText ?? title}
                 image={firstImage?.gatsbyImageData ?? storefrontImageData}
@@ -73,6 +80,7 @@ export const query = graphql`
   fragment ProductCard on ShopifyProduct {
     id
     title
+    totalInventory
     slug: gatsbyPath(
       filePath: "/productos/{ShopifyProduct.productType}/{ShopifyProduct.handle}"
     )

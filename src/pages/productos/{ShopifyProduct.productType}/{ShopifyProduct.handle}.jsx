@@ -30,6 +30,15 @@ export default function Product({ data: { product, suggestions } }) {
   } = product
   const { client } = React.useContext(StoreContext)
 
+  React.useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    })
+  }, [product])
+
   const [variant, setVariant] = React.useState({ ...initialVariant })
   const [quantity, setQuantity] = React.useState(1)
 
@@ -188,12 +197,12 @@ export default function Product({ data: { product, suggestions } }) {
       </div>
       <div className="section pt-0">
         <div className="container text-center">
-            <h2 className="mb-5">Tambien podrian interesarte:</h2>
-            <div className="row">
-              {suggestions.nodes.map((suggestion, index) => (
-                <ProductCard product={suggestion} key={suggestion.id} eager={index === 0} /> 
-              ))}
-            </div>
+          <h2 className="mb-5">Tambien podrian interesarte:</h2>
+          <div className="row">
+            {suggestions.nodes.map((suggestion, index) => (
+              <ProductCard product={suggestion} key={suggestion.id} eager={index === 0} />
+            ))}
+          </div>
         </div>
         <div className="text-center">
           <a href={homepageUrl} className="btn mt-5 d-inline-block mx-auto">

@@ -10,10 +10,10 @@ export function Footer() {
         <p className="mb-3">Síguenos en:</p>
         <div className="px-3 mb-3 d-lg-flex justify-content-center">
           <div className="px-1">
-            <a href="https://instagram.com/highgaang" target="_blank" className="sativa-btn btn-xs-block mb-3">@highgaang</a>
+            <a href="https://instagram.com/highgaang" target="_blank" className="btn btn-xs-block mb-3">@highgaang</a>
           </div>
           <div className="px-1">
-            <a href="https://instagram.com/pachefestmx " target="_blank" className="sativa-btn btn-xs-block mb-3">@pachefestmx</a>
+            <a href="https://instagram.com/pachefestmx " target="_blank" className="btn btn-xs-block mb-3">@pachefestmx</a>
           </div>
         </div>
       </div>

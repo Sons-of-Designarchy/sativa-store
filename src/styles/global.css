@@ -305,12 +305,8 @@ ul {
   background: none;
 }
 
-.sativa-btn:hover {
-  color: var(--primary);
-}
-
 @media (min-width: 768px) {
-  .sativa-btn:hover {
+  .btn:hover {
     box-shadow: none;
     transform: translate(3px, 3px);
   }

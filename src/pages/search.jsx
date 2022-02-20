@@ -355,7 +355,7 @@ function Pagination({ previousPage, hasPreviousPage, nextPage, hasNextPage }) {
   return (
     <nav className="pagination">
       <button
-        className="sativa-btn d-flex align-items-center m-3"
+        className="btn d-flex align-items-center m-3"
         disabled={!hasPreviousPage}
         onClick={previousPage}
         aria-label="Previous page"
@@ -364,7 +364,7 @@ function Pagination({ previousPage, hasPreviousPage, nextPage, hasNextPage }) {
         Anterior
       </button>
       <button
-        className="sativa-btn d-flex align-items-center m-3"
+        className="btn d-flex align-items-center m-3"
         disabled={!hasNextPage}
         onClick={nextPage}
         aria-label="Next page"

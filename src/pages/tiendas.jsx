@@ -28,7 +28,7 @@ export default function Tiendas() {
               <a
                 href="https://www.instagram.com/incendiarias__/"
                 target="_blank"
-                className="sativa-btn d-inline-block"
+                className="btn d-inline-block"
               >
                 @incendiarias__
               </a>
@@ -42,7 +42,7 @@ export default function Tiendas() {
               <a
                 href="https://www.instagram.com/chicksvsstigma"
                 target="_blank"
-                className="sativa-btn d-inline-block"
+                className="btn d-inline-block"
               >
                 @CHICKSVSSTIGMA
               </a>
@@ -56,7 +56,7 @@ export default function Tiendas() {
               <a
                 href="https://www.instagram.com/hipnosismx/"
                 target="_blank"
-                className="sativa-btn d-inline-block"
+                className="btn d-inline-block"
               >
                 @HIPNOSISMX
               </a>

@@ -13,7 +13,7 @@ export function AddToCart({ variantId, quantity, available, ...props }) {
   return (
     <button
       type="submit"
-      className="sativa-btn"
+      className="btn"
       onClick={addToCart}
       disabled={!available || loading}
       {...props}

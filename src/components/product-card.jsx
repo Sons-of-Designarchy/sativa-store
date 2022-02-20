@@ -39,31 +39,33 @@ export function ProductCard({ product, eager }) {
   const hasImage = firstImage || Object.getOwnPropertyNames(storefrontImageData || {}).length
 
   return (
-    <Link
-      className="product-card-container"
-      to={slug}
-      aria-label={`View ${title} product page`}
-    >
-      {hasImage
-        ? (
-          <div className="product-card-image" data-name="product-image-box">
-            <GatsbyImage
-              alt={firstImage?.altText ?? title}
-              image={firstImage?.gatsbyImageData ?? storefrontImageData}
-              loading={eager ? "eager" : "lazy"}
-            />
-          </div>
-        ) : (
-          <div style={{ height: defaultImageHeight, width: defaultImageWidth }} />
-        )
-      }
-      <div className="product-card-details">
-        <p className="product-card-heading">
-          {title}
-        </p>
-        <div className="product-card-price">{price}</div>
-      </div>
-    </Link>
+    <div className="col-6 col-lg-4 col-xl-3">
+      <Link
+        className="product-card-container"
+        to={slug}
+        aria-label={`View ${title} product page`}
+      >
+        {hasImage
+          ? (
+            <div className="product-card-image" data-name="product-image-box">
+              <GatsbyImage
+                alt={firstImage?.altText ?? title}
+                image={firstImage?.gatsbyImageData ?? storefrontImageData}
+                loading={eager ? "eager" : "lazy"}
+              />
+            </div>
+          ) : (
+            <div style={{ height: defaultImageHeight, width: defaultImageWidth }} />
+          )
+        }
+        <div className="product-card-details">
+          <p className="product-card-heading">
+            {title}
+          </p>
+          <div className="product-card-price">{price}</div>
+        </div>
+      </Link>
+    </div>
   )
 }
 

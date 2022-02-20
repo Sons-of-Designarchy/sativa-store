@@ -21,9 +21,9 @@ export default function ProductTypeIndex({
     >
       <Seo title={`Tienda`} />
       <div className="section pb-4 text-center">
-        <h1 className="display">{productType}</h1>
+        <h2 className="display">{productType}</h2>
       </div>
-      <div className="py-5">
+      <div className="pt-3 pb-5">
         <ProductListing products={products.nodes} />
       </div>
       <div className="text-center my-5">

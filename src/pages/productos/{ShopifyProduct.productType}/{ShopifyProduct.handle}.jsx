@@ -7,15 +7,12 @@ import { StoreContext } from "../../../context/store-context"
 import { AddToCart } from "../../../components/add-to-cart"
 import { NumericInput } from "../../../components/numeric-input"
 import { formatPrice } from "../../../utils/format-price"
+import { ProductCard } from "../../../components/product-card"
 import { Seo } from "../../../components/seo"
 import { CgChevronRight as ChevronIcon } from "react-icons/cg"
 import {
-  header,
   noImagePreview,
-  optionsWrapper,
   priceValue,
-  selectVariant,
-  addToCartStyle,
   productDescription,
 } from "./product-page.module.css"
 import { homepageUrl } from "../.."
@@ -186,19 +183,22 @@ export default function Product({ data: { product, suggestions } }) {
                 available={available}
               />
             </div>
-            {/* <div className={metaSection}>
-              <span className={labelFont}>Tipo</span>
-              <span className={tagList}>
-                <Link to={product.productTypeSlug}>{product.productType}</Link>
-              </span>
-              <span className={labelFont}>Etiquetas</span>
-              <span className={tagList}>
-                {product.tags.map((tag) => (
-                  <Link to={`/products?t=${tag}`}>{tag}</Link>
-                ))}
-              </span>
-            </div> */}
           </div>
+        </div>
+      </div>
+      <div className="section pt-0">
+        <div className="container text-center">
+            <h2 className="mb-5">Tambien podrian interesarte:</h2>
+            <div className="row">
+              {suggestions.nodes.map((suggestion, index) => (
+                <ProductCard product={suggestion} key={suggestion.id} eager={index === 0} /> 
+              ))}
+            </div>
+        </div>
+        <div className="text-center">
+          <a href={homepageUrl} className="btn mt-5 d-inline-block mx-auto">
+            ← Volver al inicio
+          </a>
         </div>
       </div>
     </Layout>
@@ -248,7 +248,7 @@ export const query = graphql`
       }
     }
     suggestions: allShopifyProduct(
-      limit: 3
+      limit: 4
       filter: { productType: { eq: $productType }, id: { ne: $id } }
     ) {
       nodes {

@@ -5,14 +5,10 @@ import debounce from "debounce"
 import { CgChevronRight, CgChevronLeft } from "react-icons/cg"
 import { Layout } from "../components/layout"
 import CrossIcon from "../icons/cross"
-import SortIcon from "../icons/sort"
-import FilterIcon from "../icons/filter"
 import SearchIcon from "../icons/search"
 import { ProductCard } from "../components/product-card"
 import { getValuesFromQueryString, useProductSearch } from "../utils/hooks"
 import { getCurrencySymbol } from "../utils/format-price"
-import { Spinner } from "../components/progress"
-import { Filters } from "../components/filters"
 import { SearchProvider } from "../context/search-provider"
 import { AboutUs } from "../components/about-us"
 
@@ -207,47 +203,39 @@ function SearchPage({
             <div className="product-list row">
               {!isFetching && isHome ? (
                 productList.map((product, index) => (
-                  <div className="col-6 col-lg-4 col-xl-3">
-                    <div
-                      className="product-list-item product-card"
-                      key={product.id}
-                    >
-                      <ProductCard
-                        eager={index === 0}
-                        product={{
-                          title: product.title,
-                          priceRangeV2: product.priceRangeV2,
-                          slug: `/productos/${slugify(product.productType)}/${product.handle
-                            }`,
-                          // The search API and Gatsby data layer have slightly different images available.
-                          images: product.images,
-                          // storefrontImages: !isDefault && product.images,
-                          vendor: product.vendor,
-                        }}
-                      />
-                    </div>
-                  </div>
+                  <ProductCard
+                    key={product.id}
+                    eager={index === 0}
+                    product={{
+                      title: product.title,
+                      priceRangeV2: product.priceRangeV2,
+                      slug: `/productos/${slugify(product.productType)}/${product.handle
+                        }`,
+                      // The search API and Gatsby data layer have slightly different images available.
+                      images: product.images,
+                      // storefrontImages: !isDefault && product.images,
+                      vendor: product.vendor,
+                    }}
+                  />
                 ))
               ) : (
                 <>
                   {!isFetching &&
                     productList.map(({ node }, index) => (
-                      <div className="col-6 col-lg-4 col-xl-3">
-                        <div className="product-list-item product-card" key={node.id}>
-                          <ProductCard
-                            eager={index === 0}
-                            product={{
-                              title: node.title,
-                              priceRangeV2: node.priceRangeV2,
-                              slug: `/productos/${slugify(node.productType)}/${node.handle
-                                }`,
-                              // The search API and Gatsby data layer have slightly different images available.
-                              images: isDefault ? node.images : [],
-                              storefrontImages: !isDefault && node.images,
-                              vendor: node.vendor,
-                            }}
-                          />
-                        </div>
+                      <div key={node.id}>
+                        <ProductCard
+                          eager={index === 0}
+                          product={{
+                            title: node.title,
+                            priceRangeV2: node.priceRangeV2,
+                            slug: `/productos/${slugify(node.productType)}/${node.handle
+                              }`,
+                            // The search API and Gatsby data layer have slightly different images available.
+                            images: isDefault ? node.images : [],
+                            storefrontImages: !isDefault && node.images,
+                            vendor: node.vendor,
+                          }}
+                        />
                       </div>
                     ))}
                 </>

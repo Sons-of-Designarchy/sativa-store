@@ -5,7 +5,7 @@ import { ProductCard } from "./product-card"
 export function ProductListing({ products = [] }) {
   return (
     <div className="container">
-      <div className="product-list row">
+      <div className="product-list row justify-content-center">
         {products.map((p, index) => (
           <ProductCard product={p} key={p.id} eager={index === 0} />
         ))}

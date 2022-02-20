@@ -202,7 +202,7 @@ function SearchPage({
                 {filters.term ? ` for "${filters.term}"…` : `…`}
               </p>
             )}
-            <div className="product-list row">
+            <div className="product-list row justify-content-center">
               {!isFetching && isHome ? (
                 productList.map((product, index) => (
                   <ProductCard

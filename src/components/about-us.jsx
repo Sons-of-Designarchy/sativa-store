@@ -1,4 +1,5 @@
 import * as React from "react"
+import Instagram from "../images/social/ig-dark.svg"
 
 export function AboutUs() {
   return (
@@ -8,27 +9,9 @@ export function AboutUs() {
           <div className="row align-items-center">
             <div className="col-md-6">
               <h1 className="display mb-4">We are High Gaang</h1>
-              <div className="d-flex">
-                {/* <a
-                  href="https://t.me/joinchat/CHYrw_NslEAwYjQx"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="sativa-btn btn-green"
-                  style={{ marginRight: "1rem", marginBottom: "1rem" }}
-                >
-                  Únete al Telegram
-                </a> */}
-                {/* <a
-                  href="#newsletter"
-                  className="sativa-btn btn-green"
-                  style={{ marginRight: "1rem", marginBottom: "1rem" }}
-                >
-                  Suscríbete al newsletter
-                </a> */}
-              </div>
             </div>
             <div className="col-md-6">
-              <p className="hero-content">
+              <p className="hero-content mb-4">
                 Somos una comunidad que busca crear espacios seguros para tener
                 una libre expresión sobre el consumo responsable y recreativo
                 del Cannabis.
@@ -39,6 +22,7 @@ export function AboutUs() {
                   href="https://www.instagram.com/highgaang/"
                   target="_blank"
                   rel="noreferrer"
+                  className="text-underline"
                 >
                   marca de lifestyle
                 </a>
@@ -47,6 +31,7 @@ export function AboutUs() {
                   href="https://www.pachefest.com"
                   target="_blank"
                   rel="noreferrer"
+                  className="text-underline"
                 >
                   un festival
                 </a>
@@ -55,6 +40,17 @@ export function AboutUs() {
                   * que nos borraron 😢, pero volverá pronto en otro formato
                 </span>
               </p>
+              <div className="d-lg-none mt-4">
+                <a
+                  href="https://www.instagram.com/highgaang/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-lg"
+                >
+                  <img src={Instagram} style={{ width: "0.75rem", marginRight: 8 }} />
+                  highgaang
+                </a>
+              </div>
             </div>
           </div>
         </div>

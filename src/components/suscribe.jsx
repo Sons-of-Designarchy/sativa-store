@@ -1,5 +1,4 @@
 import * as React from "react"
-import Cupid from "../images/home/cupid.png"
 import { EmailListForm } from "./suscribe-form"
 
 export function Suscribe() {
@@ -19,7 +18,7 @@ export function Suscribe() {
           </div>
           <div className="col-lg-1"></div>
           <div className="col-lg-6">
-            <img src={Cupid} className="img-fluid mx-auto" width="550" />
+            {/* <img src={Cupid} className="img-fluid mx-auto" width="550" /> */}
           </div>
         </div>
       </div>

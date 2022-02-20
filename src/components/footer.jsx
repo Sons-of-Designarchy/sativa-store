@@ -1,8 +1,7 @@
 import { Link } from "gatsby"
 import * as React from "react"
-import Logo from "../images/logo-footer.png"
+// import Logo from "../images/logo-footer.png"
 import { copyright, blurb } from "./footer.module.css"
-import { Navigation } from "./navigation"
 
 export function Footer() {
   return (

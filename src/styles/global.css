@@ -250,8 +250,8 @@ ul {
   color: var(--primary) !important;
 }
 
-.sativa-btn {
-  font-size: 12px;
+.btn {
+  font-size: 14px;
   font-weight: 500;
   text-transform: uppercase;
   display: inline-block;
@@ -266,6 +266,11 @@ ul {
   transition: all ease-in 0.15s;
   text-decoration: none;
   display: flex;
+  letter-spacing: 1px;
+}
+
+.btn:hover {
+  text-decoration: none;
 }
 
 .btn-purple {

@@ -152,7 +152,12 @@ export default function Product({ data: { product, suggestions } }) {
             <h1 className="mb-2">{title}</h1>
             <p className={productDescription}>{description}</p>
             <h2 className={priceValue}>
-              <span>{price}</span>
+              {product.productType == 'Hoodies' ? <>
+              <span style={{ textDecoration: 'line-through', opacity: 0.5, marginRight: '1rem' }}>{price}</span>
+              <span style={{ textDecoration: 'line-through' }}> MX $525</span>
+              </> : (
+                <span>{price}</span>
+              )}
             </h2>
             <fieldset className="d-flex">
               {hasVariants &&

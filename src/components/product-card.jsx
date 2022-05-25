@@ -69,7 +69,14 @@ export function ProductCard({ product, eager }) {
           <p className="product-card-heading">
             {title}
           </p>
-          <div className="product-card-price">{price}</div>
+          <div className="product-card-price">
+          {product.productType == 'Hoodies' ? <>
+              <span style={{ textDecoration: 'line-through', opacity: 0.5, marginRight: '1rem' }}>{price}</span>
+              <span style={{ textDecoration: 'line-through' }}> MX $525</span>
+              </> : (
+                <span>{price}</span>
+              )}
+          </div>
         </div>
       </Link>
     </div>
@@ -81,6 +88,7 @@ export const query = graphql`
     id
     title
     totalInventory
+    productType
     slug: gatsbyPath(
       filePath: "/productos/{ShopifyProduct.productType}/{ShopifyProduct.handle}"
     )

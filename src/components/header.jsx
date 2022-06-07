@@ -80,14 +80,6 @@ export function Header({ headerBottom }) {
           </Link>
           <div style={{ flex: 1 }}>
             <div className="app-header-top">
-              <div>
-                <Link
-                  to="/productos/hoodies"
-                  className="app-header-link"
-                >
-                  HOT SALE: 25% off en todas las hoodies, aplicado en tu carrito!
-                </Link>
-              </div>
               <div className="menu-right align-items-center">
                 <Link
                   key="All"

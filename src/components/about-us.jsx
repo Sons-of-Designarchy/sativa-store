@@ -35,10 +35,7 @@ export function AboutUs() {
                 >
                   un festival
                 </a>
-                , y un IG con contenido educativo*{" "}
-                <span style={{ fontSize: 14, display: 'block' }}>
-                  * que nos borraron 😢, pero volverá pronto en otro formato
-                </span>
+                , y un IG con contenido educativo{" "}
               </p>
               <div className="d-lg-none mt-4">
                 <a

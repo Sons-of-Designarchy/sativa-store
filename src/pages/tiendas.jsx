@@ -20,8 +20,8 @@ export default function Tiendas() {
       <div className="section pb-4">
         <div className="container">
           <h1 className="mb-5">Encuentra nuestros productos en las tiendas distribuidoras</h1>
-          <div className="row mb-5">
-            <div className="col-lg-4">
+          <div className="row">
+            <div className="col-lg-4 mb-5">
               <img src={Incendiarias} className="img-fluid mb-3" />
               <h3 className="mb-2">Incendiarias - CDMX</h3>
               <p className="font-sm mb-3">
@@ -35,7 +35,7 @@ export default function Tiendas() {
                 @incendiarias__
               </a>
             </div>
-            <div className="col-lg-4">
+            <div className="col-lg-4 mb-5">
               <img src={ChicksVsStigma} className="img-fluid mb-3" />
               <h3 className="mb-2">Chiks vs stigma - CDMX</h3>
               <p className="font-sm mb-3">
@@ -49,7 +49,7 @@ export default function Tiendas() {
                 @CHICKSVSSTIGMA
               </a>
             </div>
-            <div className="col-lg-4">
+            <div className="col-lg-4 mb-5">
               <img src={Hipnosis} className="img-fluid mb-3" />
               <h3 className="mb-2">Tienda Hipnosis - CDMX</h3>
               <p className="font-sm mb-3">
@@ -64,8 +64,8 @@ export default function Tiendas() {
               </a>
             </div>
           </div>
-          <div className="row mb-5">
-            <div className="col-lg-4">
+          <div className="row">
+            <div className="col-lg-4 mb-5">
               <img src={Les} className="img-fluid mb-3" />
               <h3 className="mb-2">Le Sisteret’s - CDMX</h3>
               <p className="font-sm mb-3">
@@ -79,7 +79,7 @@ export default function Tiendas() {
                 @LE_SISTERETS
               </a>
             </div>
-            <div className="col-lg-4">
+            <div className="col-lg-4 mb-5">
               <img src={Oxen} className="img-fluid mb-3" />
               <h3 className="mb-2">Oxen Concept Store - Guadalajara</h3>
               <p className="font-sm mb-3">
@@ -93,7 +93,7 @@ export default function Tiendas() {
                 @OXENCONCEPT
               </a>
             </div>
-            <div className="col-lg-4">
+            <div className="col-lg-4 mb-5">
               <img src={Mar} className="img-fluid mb-3" />
               <h3 className="mb-2">Mar Mexa - Cholula, Puebla</h3>
               <p className="font-sm mb-3">

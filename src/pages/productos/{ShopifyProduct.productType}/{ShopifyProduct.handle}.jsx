@@ -202,7 +202,7 @@ export default function Product({ data: { product, suggestions } }) {
       </div>
       <div className="section pt-0">
         <div className="container text-center">
-          <h2 className="mb-5">Tambien podrian interesarte:</h2>
+          <h2 className="mb-5">Tambien podría interesarte:</h2>
           <div className="row">
             {suggestions.nodes.map((suggestion, index) => (
               <ProductCard product={suggestion} key={suggestion.id} eager={index === 0} />

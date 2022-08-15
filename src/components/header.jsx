@@ -55,6 +55,26 @@ export function Header({ headerBottom }) {
 
   return (
     <>
+    <div className="fuck-instagram">
+      <div className="row">
+        <div className="col-lg-6 mx-auto">
+          <h3>
+          ¡Nos borraron nuestra cuenta de Instagram de nuevo! 🥺
+          </h3>
+          <p style={{ fontSize: '14px', marginTop: '1rem'}}>Pero no te preocupes, estamos trabajando para resolverlo.</p>
+          <p style={{ fontSize: '14px', marginBottom: '1rem'}}>
+          Mientras tanto este sitio sigue funcionando al 100% puedes pedir vía whatsapp o contactarnos para pedidos en curso al <a href="tel:+525615441513">56 1544 1513</a> o por correo a <a href="mailto:highgaang@gmail.com">highgaang@gmail.com</a>
+          </p>
+          {/* <p style={{ fontSize: '14px', marginBottom: '1rem'}}>
+          Recuerda que para no perderte toda nuestra comunicación te puedes unir al <a href="https://www.pachefest.com/">grupo de Telegram</a>
+          </p> */}
+
+
+
+
+        </div>
+      </div>
+    </div>
       {Cart()}
       <div className="mobile-nav">
         <div className="app-header">
